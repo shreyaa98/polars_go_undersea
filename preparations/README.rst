@@ -8,15 +8,14 @@ Preparations
 .. card::
     :shadow: lg
 
-    **Boarding**
+    **Upgrade to Polars**
 
-    You enter your spaceship through the airlock and take off your helmet.
-    As the captain, it is your duty to be the first panda on board.
-    There is an eerie silence. The ship is sleeping.
-    An occasional hum from a life support console is all you can hear.
-    You step through the corridors and finally reach the bridge.
-    The captains seat feels comfortable, once again.
-    Time to boot your spaceships computer.
+    The ship’s computer boots, consoles flicker to life.
+    Today, something is different. A new engine hums beneath the floor.
+    Status lights spell out a single word: Polars.
+    Columns of data scroll by, sharper and faster than before.
+    With a tap of your paw, you route all sensors through the new core.
+    The bridge feels more alive. Your ship is ready for data at warp speed.
 
     Before you can start your journey, you need to install a few programs on your ships' computer:
 
@@ -55,7 +54,8 @@ Go to `www.anaconda.com  <https://www.anaconda.com/>`__ and download Anaconda fo
 
    .. code::
 
-      pip install --upgrade pandas numpy seaborn matplotlib
+      pip install --upgrade polars numpy seaborn matplotlib
+          
 
 ----
 
@@ -74,7 +74,7 @@ Write into an empty code cell:
 
 .. code:: python3
 
-    import pandas as pd
+    import polars as pl
     import numpy as np
     import seaborn as sns
     from matplotlib import pyplot as plt
@@ -142,7 +142,7 @@ Your computer should respond with:
 
 ----
 
-.. figure:: hello_world.jpeg
+.. figure:: new_world.jpeg
 
 .. card::
    :shadow: lg
