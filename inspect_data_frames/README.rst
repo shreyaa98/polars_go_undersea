@@ -21,9 +21,10 @@ Inspect DataFrames
 What is a DataFrame?
 --------------------
 
-The class `pandas.DataFrame` is the central data structure in `pandas`.
-In most aspects, you can think of it as a table with row and column labels, also called `Index`.
-Each column has the type `pandas.Series`.
+The class `polars.DataFrame` is the central data structure in `polars`.
+You can think of it as a table of data, with columns (each of a specific type) and rows.
+Unlike pandas, Polars does not have an implicit index; all data is stored in columns, and if you want an “index,” you create it explicitly. Each column is a `polars.Series`.
+Polars is designed for high-performance and parallel computation, making it especially fast on large datasets.
 
 .. figure:: dataframe.svg
 
@@ -69,7 +70,7 @@ The shape of a `DataFrame` is alway a tuple of two integers `(rows, columns)`.
 Data types
 ----------
 
-When you load data from a CSV file, `pandas` automatically infers data types.
+When you load data from a CSV file, `polars` automatically infers data types.
 Sometimes a single wrong value converts a numerical column to strings.
 
 .. code:: python
@@ -86,11 +87,12 @@ Sometimes a single wrong value converts a numerical column to strings.
 Generic overview
 ----------------
 
+Polars prints the table by default with types, so often print(df) is already enough for a quick overview.
 You can check data types, the number of entries for each column and memory size with a single command:
 
 .. code:: python
 
-   df.info()
+   df.estimated_size('mb') # Estimated size is given in bytes by default.
 
 
 ----
