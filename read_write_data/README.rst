@@ -29,13 +29,13 @@ Read CSV files
 --------------
 
 The ``read_csv`` function is often the first command used. It has a lot
-of optional parameters, three of which are shown here:
+of optional parameters, two of which are shown here:
 
 .. code:: python
 
-   import pandas as pd
+   import polars as pl
 
-   df = pd.read_csv('panda_sector.csv', index_col=0, sep=',', header=0)
+   df = pl.read_csv('panda_sector.csv', separator=',', has_header=True)
 
 ``df`` is a **DataFrame**, a fundamental data structure in pandas.
 For most practical matters, it works like a table.
@@ -71,17 +71,20 @@ For most practical matters, it works like a table.
 Read Excel files
 ----------------
 
-Reading Excel spreadsheets works in the same way.
-There is one subtle difference though: if your column labels are numbers, they are converted to integers, while `pd.read_csv()` reads them as strings. 
+Polars does not have a native Excel reader. Instead, it uses an external library called an "engine" to parse Excel files into a form that Polars can parse.
+Here, we are using the default fastexcel engine. The xlsx2csv and openpyxl engines are slower but may have more features for parsing tricky data.
+
 
 .. code:: python
 
-   df = pd.read_excel('penguin_sector.xlsx', index_col=0)
+   df = pl.read_excel('penguin_sector.xlsx', engine='fastexcel')
 
 .. note::
 
    You may need to install an extra library to read Excel files.
-   Please follow the instructions in the output.
+   If you get error messages about missing dependencies, try installing the fastexcel engine:
+   
+   pip install fastexcel
 
 ----
 
@@ -103,30 +106,49 @@ Once the library is installed, you can send SQL queries to your database and get
 
    from sqlalchemy import create_engine
 
-   conn = create_engine('postgres//user:psw@host:port/dbname')
-   df = pd.read_sql('SELECT * FROM penguins', conn)
+   conn = create_engine('postgressql//user:psw@host:port/dbname')
+   df = pd.read_database('SELECT * FROM penguins', conn)
 
 ----
 
 Read JSON
 ---------
 
-Reading JSON only works if the structure is table-like.
+Polars expects JSON to be row-oriented. 
+If the JSON file contains column-oriented nested dictionaries, you must convert it to rows first.
 
 .. code:: python
 
-   df = pd.read_json('amoeba_sector.json') 
+   import json
+   
+   with open("amoeba_sector.json") as f:
+      data = json.load(f)
+   
+   rows = [
+    {col: data[col][idx] for col in data}
+    for idx in data["name"]
+   ]
+   df = pl.DataFrame(rows)
+
+
+If the JSON is already row-oriented, you can read it directly
+
+.. code:: python
+
+   df = pl.read_json('amoeba_sector.json') 
 
 ----
 
 Read from Clipboard
 -------------------
 
-This is sometimes useful when improvising
+This is sometimes useful when improvising.
+In Polars, there is no direct read_clipboard() function like in pandas. 
+But you can easily achieve the same thing by reading the clipboard text and passing it to Polars.
 
 .. code:: python
 
-   df = pd.read_clipboard()
+   df = pl.from_pandas(pd.read_clipboard())
 
 ----
 
@@ -138,7 +160,7 @@ it is sometimes straightforward to combine them into a single `DataFrame`:
 
 .. code:: python
 
-   df = pd.concat([df1, df2, df3, ...])
+   df = pl.concat([df1, df2, df3, ...])
 
 ----
 
@@ -149,16 +171,18 @@ For writing a DataFrame to an output file, there is an equivalent set of functio
 
 .. code:: python
 
-   df.to_csv("planets.csv")
-   df.to_csv("planets.csv", index=False)  # do not write the index column
+   df.write_csv("planets.csv")
 
-   df.to_excel("planets.xlsx")
+   df = df.with_row_count("index") # add an index column
+   df.write_csv("planets_polars.csv")  
+
+   df.write_excel("planets.xlsx")
    
-   df.to_json("planets.json")
+   df.write_json("planets.json")
 
 .. seealso::
 
-   `Serialization methods in pandas DataFrames <https://pandas.pydata.org/docs/reference/frame.html#serialization-io-conversion>`__
+   `Polars I/O reference <https://docs.pola.rs/api/python/stable/reference/io.html>`__
 
 ----
 
@@ -185,3 +209,6 @@ Challenge
    The planet names were scraped from `everybodywiki.com <https://en.everybodywiki.com/List_of_Star_Trek_planets_(A%E2%80%93B)>`__ with the following script:
 
    .. literalinclude:: planet_scraper.py
+
+
+
