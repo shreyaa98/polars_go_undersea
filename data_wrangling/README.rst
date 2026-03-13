@@ -28,13 +28,13 @@ Sort a DataFrame by:
 
 .. code:: python
 
-   df.sort_values(by="category", inplace=True)
+   df.sort("category")
 
 to sort by more than one column, try:
 
 .. code:: python
 
-   df.sort_values(by=["category", "type"], ascending=[True, False], inplace=True)
+   df = df.sort(["category", "type"], descending=[False, True])
 
 
 Change the data type
@@ -44,13 +44,13 @@ Convert values to strings:
 
 .. code:: python
 
-   df["crate_str"] = df["crate_no"].astype(str)
+   df = df.with_columns(pl.col("crate_no").cast(pl.Utf8).alias("crate_str"))
 
 You can easily combine multiple columns using standard operators:
 
 .. code:: python
 
-   df["crate_id"] = df["crate_no"].astype(str) + df["crate_shelf"]
+   df = df.with_columns((pl.col("crate_no").cast(pl.Utf8) + pl.col("crate_shelf")).alias("crate_id"))
 
 Create new rows
 ---------------
@@ -61,37 +61,19 @@ The only prerequisite is that the length matches that of your DataFrame:
 .. code:: python
 
    deck = [d for _,d in zip(range(df.shape[0]), cycle("123"))]  # repeat 1,2,3,1,..
-   df["deck"] = deck 
+   df = df.with_columns(pl.lit(deck).alias("deck")) 
 
 Set the index column
 --------------------
 
-The index is a special column of a DataFrame, because it is treated
-differently by many operations in pandas.
+In Polars, DataFrames do not have an index column like pandas. Instead, you can filter rows based on column values.
 
 .. code:: python
 
-   # put the new crate_id column in the index
-   crates = df.set_index('crate_id')
+   # to select rows where crate_id is '13A'
+   crates = df.filter(pl.col("crate_id") == "13A")
 
-   # now you can select by crate_id easily:
-   crates.loc['13A']
-
-Note that the ``inplace=True`` parameter modifies the DataFrame instead
-of returning a new one:
-
-.. code:: python
-
-   df.set_index('crate_id', inplace=True)
-
-The `inplace=True` notation is more memory-efficient, but it is more tricky in Jupyter
-notebooks (e.g. when you run that line twice you get different results.
-
-To move the index to a regular column, use:
-
-.. code:: python
-
-   df_reset = df.reset_index()  # inserts a numerical index starting from 0
+Polars operations return new DataFrames, so no inplace parameter.
 
 Missing values
 --------------
@@ -101,22 +83,22 @@ values is:
 
 .. code:: python
 
-   df.isna().sum().plot.bar()
+   df.null_count().to_pandas().plot.bar()
 
 Often, you might simply want to kick out all rows in which a None or NaN
 occurs:
 
 .. code:: python
 
-   df_dropped = df.dropna(inplace=False)  # same logic as with set_index()
+   df_dropped = df.drop_nulls()
 
 Alternatively, you might want to fill in a best guess value:
 
 .. code:: python
 
-   df_fixed = df.fillna(42)
+   df_fixed = df.fill_null(42)
    # or
-   df_fixed = df.fillna(df.median())
+   df_fixed = df.fill_null(strategy="median")
 
 There are many, many strategies to fix missing values (imputation
 methods).
@@ -141,8 +123,8 @@ back to a ``for`` loop over all the rows.
 
 .. code:: python
 
-   for index, row in df.iterrows():
-       print(index, row['type'])
+   for i, row in enumerate(df.iter_rows(named=True)):
+       print(i, row['type'])
 
 
 .. figure:: bamboo.jpg
