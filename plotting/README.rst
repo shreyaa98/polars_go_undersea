@@ -22,11 +22,11 @@ Navigation
 Step 1: Import packages
 -----------------------
 
-When using the pandas/matplotlib/seaborn stack, your imports should look as follows:
+When using the polars/matplotlib/seaborn stack, your imports should look as follows:
 
 .. code:: python
 
-   import pandas as pd
+   import polars as pd
    import seaborn as sns
    from matplotlib import pyplot as plt
 
@@ -42,7 +42,7 @@ Make sure the data you are using is clean and consistent:
 * check the data types of the columns you want to plot
 * few missing values
  
-Pandas by default kicks out rows with missing data when plotting, but for your final plots you want to be firmly in control.
+polars by default kicks out rows with missing data when plotting, but for your final plots you want to be firmly in control.
 Here is a clean version of the planets in **panda sector:** :download:`panda_sector.csv <../read_write_data/panda_sector.csv>`
 
 .. code:: python
@@ -61,13 +61,13 @@ Most parameters of `seaborn` refer directly to column names:
 
    sns.scatterplot(data=df, x='x', y='y', hue='class', size='size')
 
-For an exploratory analysis, the default pandas functions are also a valid starting point, but they have fewer options:
+For an exploratory analysis, the default polars functions are also a valid starting point, but they have fewer options:
 
 .. code:: python
 
    df.plot.scatter(x='x', y='y')
 
-To improve the plot, use `matplotlib`, a library both `pandas` plotting functions and `seaborn` are based on.
+To improve the plot, use `matplotlib`, a library both `polars` plotting functions and `seaborn` are based on.
 
 ----
 
