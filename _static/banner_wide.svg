@@ -2,23 +2,23 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="210mm"
    height="60mm"
    viewBox="0 0 210 60"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="banner_wide.svg"
    inkscape:export-filename="/home/kristian/projects/pandas_go_to_space/title.png"
    inkscape:export-xdpi="127"
-   inkscape:export-ydpi="127">
+   inkscape:export-ydpi="127"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs2">
     <clipPath
@@ -42,16 +42,19 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="282.01029"
-     inkscape:cy="209.47832"
+     inkscape:cx="283.57143"
+     inkscape:cy="210.71429"
      inkscape:document-units="mm"
      inkscape:current-layer="g880"
      showgrid="false"
-     inkscape:window-width="1848"
-     inkscape:window-height="1016"
-     inkscape:window-x="72"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="1854"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#efece1" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -117,7 +120,7 @@
          transform="matrix(1.092029,0,0,1.092029,-9.1164029,-22.755517)">
         <text
            xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:16.46818352px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4117046"
+           style="font-style:normal;font-weight:normal;font-size:16.4682px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.411705"
            x="55.973083"
            y="285.59836"
            id="text836"><tspan
@@ -125,14 +128,14 @@
              x="55.973083"
              y="285.59836"
              id="tspan834"
-             style="stroke-width:0.4117046"><tspan
+             style="stroke-width:0.411705"><tspan
                x="55.973083"
                y="285.59836"
-               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:21.95757866px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.4117046"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:21.9576px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.411705"
                id="tspan832">DS</tspan></tspan></text>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:16.46818352px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4117046"
+           style="font-style:normal;font-weight:normal;font-size:16.4682px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.411705"
            x="94.651054"
            y="285.59836"
            id="text842"><tspan
@@ -140,11 +143,11 @@
              x="94.651054"
              y="285.59836"
              id="tspan840"
-             style="stroke-width:0.4117046"><tspan
+             style="stroke-width:0.411705"><tspan
                x="94.651054"
                y="285.59836"
-               style="font-weight:bold;font-size:21.95757866px;fill:#3964c6;fill-opacity:1;stroke-width:0.4117046"
-               id="tspan838">PANDAS</tspan></tspan></text>
+               style="font-weight:bold;font-size:21.9576px;fill:#3964c6;fill-opacity:1;stroke-width:0.411705"
+               id="tspan838">POLARS</tspan></tspan></text>
       </g>
     </g>
   </g>
