@@ -171,8 +171,6 @@ A number of image formats including png, jpg and svg are available.
 
 ----
 
-.. figure:: ice_planet.jpg
-
 Challenge
 ---------
 

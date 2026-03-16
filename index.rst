@@ -19,8 +19,6 @@
    analyze and plot that data,
    and find new tastes of bamboo and berries no creature had tasted before.
 
-.. figure:: planet.png
-
 This is a Python tutorial featuring the `polars <https://pola.rs/>`__ library.
 It focuses on the technical basics of Data Science – working with tabular data.
 On the way, you will help the polar bears explore space.
@@ -69,7 +67,7 @@ Challenges
    challenges/pagerank/README.rst
 
 
-.. figure:: huge.jpeg
+.. figure:: planet.png
 
 Image Sources
 -------------

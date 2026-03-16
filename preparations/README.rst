@@ -2,7 +2,7 @@
 Preparations
 ============
 
-.. figure:: panda_cockpit.jpeg
+.. figure:: polars_cockpit.jpeg
 
 
 .. card::

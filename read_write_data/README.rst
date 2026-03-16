@@ -186,8 +186,6 @@ For writing a DataFrame to an output file, there is an equivalent set of functio
 
 ----
 
-.. figure:: planet_surface.jpeg
-
 Challenge
 ---------
 
