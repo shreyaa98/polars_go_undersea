@@ -73,7 +73,7 @@ Often, you want to separate your metrics by categories:
 
 .. note::
 
-    ``pandas`` by default puts out numbers with maximum precision.
+    ``polars`` by default puts out numbers with maximum precision.
     In a report this can be very misleading and suggest your calculations are more precise than they actually are.
     Use ``round()`` or ``f"{number:6.2f}"`` to round the numbers. One or two decimal places are usually enough.
 
@@ -88,10 +88,19 @@ The **median** sorts the data points and then takes the point in the middle (or 
 
 The median is less prone to outliers than the mean.
 Try adding a godzilla-sized penguin to the list and see how both metrics change:
+In Polars, there is no direct way to change a value in a column, but you can use the ``when-then-otherwise`` construct. 
+But before that, you need to convert the pandas dataframe to a polars dataframe:
 
 .. code:: python3
+   
+   df2 = pl.from_pandas(df)
 
-    df.loc[1, "bill_length_mm"] = 2000
+   df = df2.with_columns(
+      pl.when(pl.arange(0, pl.len()) == 1)
+      .then(2000)
+      .otherwise(pl.col("bill_length_mm"))
+      .alias("bill_length_mm")
+)
 
 ----
 
@@ -229,8 +238,10 @@ If you want to correlate the categorical data as well, you need to use **One-Hot
 
 .. code:: python3
 
-   species = pd.get_dummies(df["species"])
-   df2 = pd.concat([df, species], axis=1)
+   df_pl = pl.from_pandas(df)
+
+   species_dummies = df_pl.to_dummies(columns=["species"])
+   df_pl_concat = df_pl.hstack(species_dummies)
 
 .. warning::
 
