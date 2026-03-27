@@ -40,33 +40,33 @@ Diplomacy
 Tokenization
 ------------
 
-Let's feed the entire message into pandas:
+Let's feed the entire message into polars:
 
 .. code:: python
 
    text = """pokhrEYLMLAohprrr ploWdoBRKledYprrr"""
-   df = pd.DataFrame({'text': [text]})
+   df = pl.DataFrame({'text': [text]})
 
 You should have a ``DataFrame`` with a single row that contains the entire text.
 Let's split the text into words.
-The ``.str`` attribute of a ``pd.Series`` gives you an access point to Python string functions:
+The ``.str`` attribute of a ``pl.Series`` gives you an access point to Python string functions:
 
 .. code:: python
 
-   words = df["text"].str.split()
+   words = df.select(pl.col("text").str.split(" "))
 
-Having a list inside a ``pd.Series`` is not too easy to read.
+Having a list inside a ``pl.Series`` is not too easy to read.
 It is better to unfold every word into a single row:
 
 .. code:: python
 
-   s = words.explode()
+   s = words.explode("text")
 
 And convert the resulting Series to a nicely indexed ``DataFrame``:
 
 .. code:: python
 
-   df = pd.DataFrame({"words": s}).reset_index(drop=True)
+   df = s.rename({"text": "words"}).with_row_index()
 
 ----
 
@@ -77,11 +77,11 @@ Your translation computer found out that every word starts with a **glacial phon
 These are any of the syllables *"plo", "pok", "pur", "prt"* or *"puk"* describing the current temperature. Because your life support keeps temperature constant, you can ignore these.
 
 Let's remove the first three characters.
-You can use ``.str`` to slice the strings in the entire column:
+You can use ``.str.slice()`` to slice the strings in the entire column:
 
 .. code:: python
 
-   df["words"].str[3:]
+   df.select(pl.col("words").str.slice(3))
 
 Every word ends with the syllable *"prrr"*, an **arctic morpheme** which means something like *"it's cold here"*. This is obvious and can be ignored as well.
 
@@ -90,10 +90,16 @@ Every second character is a *prosodial psychronic phoneme* which is quite import
 Insert numbers for *start, stop* and *step* into the slicing expression
 to get rid of all the morphemes and phonemes.
 
+The map_elements approach with a lambda is the standard way to replicate complex string slicing in Polars expressions.
+
 .. code:: python
-   
-   df["words"].str[start:end:step]
-   
+
+   df = df.select(
+       pl.col("words").map_elements(
+           lambda x: x[start:end:step]
+       )
+   )
+
 Assign the result to a new column.
 
 ----
@@ -103,11 +109,11 @@ Case Conversion
 
 Words in the penguin language consist of a mix of uppercase and lowercase characters.
 The case indicates how much the speaker is freezing (lowercase=a little, uppercase=a lot).
-The methods ``.str.upper()`` and ``.str.lower()`` allow to change case for an entire string column:
+The methods ``.str.to_uppercase()`` and ``.str.to_lowercase()`` allow to change case for an entire string column:
 
 .. code:: python
    
-   df["words"].str.lower()
+   df.select(pl.col("words").str.to_lowercase())
 
 Because of our dense fur, the cold doesn't affect us much.
 Convert to everything to lower case.
@@ -118,11 +124,11 @@ Join Words
 ----------
 
 Once the computer is done translating all the words, you might want to put them into a single piece of text again.
-Because Python can iterate over columns of a DataFrame, you can use the normal `.join()` method of a string:
+In Polars, you can use the ``.str.join()`` method to join all strings in a column with a delimiter:
 
 .. code:: python
    
-    " ".join(df["words"])
+   df.select(pl.col("words").str.join(" "))
 
 ----
 
@@ -133,21 +139,20 @@ For a deeper scientific analysis of the penguin language, the word length might 
 
 .. code:: python
 
-   df["words"].str.len()
+   df.select(pl.col("words").str.len_chars())
 
 ----
 
 String Search
 -------------
 
-Strings in pandas columns can be searched with **Regular Expressions**.
-You can use the ``.findall()`` function and pattern syntax from the ``re`` module:
+Strings in Polars columns can be searched with **Regular Expressions**.
+You can use the ``.str.extract_all()`` function to find all matches with a regex pattern:
 
 .. code:: python
 
-   import re
+   df.select(pl.col("words").str.extract_all(r'(?i)(h.e.l.l.o)'))
 
-   df['words'].str.findall(r'h.e.l.l.o', re.IGNORECASE)
 
 ----
 
@@ -159,6 +164,7 @@ Your translation computer has developed an algorithm that translates panda langu
 
 .. code:: python
 
+   import polars as pl
    import string
    from random import choice
    
@@ -174,9 +180,21 @@ Your translation computer has developed an algorithm that translates panda langu
        prefix = choice(["plo", "pok", "pur", "prt", "puk"])
        postfix = 'prrr'
        return prefix + chars + postfix
-   
+
    message = "..."
    words = [translate_pan_to_peng(w) for w in message.split()]
-   translated = ' '.join(words)
 
-**Write an aproppriate response and translate it to pingu-speak.**
+   df = pl.DataFrame({"text": [message]})
+
+   result = (
+      df
+      .select(pl.col("text").str.split(" ").alias("words"))
+      .explode("words")
+      .with_columns(
+         pl.col("words").map_elements(translate_pan_to_peng).alias("translated")
+      )
+   )
+
+   print(result)
+
+**Write an appropriate response and translate it to pingu-speak.**
