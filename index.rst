@@ -15,7 +15,7 @@
    The polar bears would dive into the depths to discover hidden worlds full of data, 
    to analyze and plot that data, and to uncover rare Arctic delicacies no creature had tasted before.
 
-.. figure:: submarine.png
+.. figure:: resized_submarine.png
 
 This is a Python tutorial featuring the `polars <https://pola.rs/>`__ library.
 It focuses on the technical basics of Data Science – working with tabular data.
@@ -65,7 +65,7 @@ Challenges
    challenges/pagerank/README.rst
 
 
-.. figure:: pandas_polars.png
+.. figure:: resized_pandas_polars.png
 
 Image Sources
 -------------
