@@ -1,4 +1,4 @@
-# Polars Go to Space
+# Polars Go Undersea
 
 A data analysis exercise featuring the polars library and a space travel story.
 
