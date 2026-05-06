@@ -47,7 +47,7 @@ html_theme = 'furo'
 html_theme_path = ['themes']
 html_static_path = ['_static']
 html_logo = "_static/banner_wide.svg"
-html_favicon = "_static/logo.svg"
+html_favicon = "_static/banner_wide.svg"
 
 
 html_theme_options = {
