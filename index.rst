@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 .. figure::
-   title.png
+   title.svg
 
 .. card::
    :shadow: lg

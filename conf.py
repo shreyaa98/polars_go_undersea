@@ -47,7 +47,7 @@ html_theme = 'furo'
 html_theme_path = ['themes']
 html_static_path = ['_static']
 html_logo = "_static/banner_wide.svg"
-html_favicon = "_static/banner_wide.svg"
+html_favicon = "_static/logo.svg"
 
 
 html_theme_options = {
@@ -60,12 +60,7 @@ html_theme_options = {
         # see https://github.com/pradyunsg/furo/tree/main/src/furo/assets/styles/variables
         "color-card-background": "#005f99",
         "color-card-foreground": "#ffffff",
-    },
-
-    # "dark_css_variables": {
-    #     "color-card-background": "#003f66",
-    #     "color-card-foreground": "#ffffff",
-    # },
+    }
 }
 
 todo_include_todos = True
