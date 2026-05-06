@@ -2,7 +2,7 @@
 Preparations
 ============
 
-.. figure:: polars_helm.png
+.. figure:: polars_control_room.jpeg
 
 .. card::
     :shadow: lg
