@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'polars_go_to_space'
+project = 'polars_go_undersea'
 copyright = '2026, Kristian Rother, Shreyaasri Prakash'
 author = 'Kristian Rother, Shreyaasri Prakash'
 release = '0.1'
@@ -52,13 +52,13 @@ html_favicon = "_static/logo.svg"
 
 html_theme_options = {
     "sidebar_hide_name": True,
-    "source_repository": "https://github.com/shreyaa98/polars_go_to_space/",
+    "source_repository": "https://github.com/shreyaa98/polars_go_undersea/",
     "source_branch": "main",
     "source_directory": "/",
 
     "light_css_variables": {
         # see https://github.com/pradyunsg/furo/tree/main/src/furo/assets/styles/variables
-        "color-card-background": "#ffbb88",
+        "color-card-background": "#005f99",
     },
 }
 
