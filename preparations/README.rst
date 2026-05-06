@@ -138,7 +138,6 @@ Your computer should respond with:
 ----
 
 .. figure:: new_world.jpeg
-   :alt: Aarla Frij at the controls of her submarine after the ship computer comes online.
 
 .. card::
    :shadow: lg

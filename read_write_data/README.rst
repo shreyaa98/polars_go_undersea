@@ -8,14 +8,16 @@ Read and Write Data
 
    **Planet Data**
 
-   The known universe is divided into three sectors, 
-   of which the first is inhabited by giant amoeba, the second by penguins, 
-   the third by cute bears called `xiong mao <https://chinese.yabla.com/chinese-english-pinyin-dictionary.php?define=xiong+mao>`__ in their own language, in ours simply *pandas*.
-   All of them differ in their customs, operating systems and favorite programming language.
-   But they are generally friendly.
+   The submarine was safely in the harbor. The ship’s computer was up and running.
+   It was time to inspect the course for the journey.
 
-   Before your spaceship can travel anywhere, you need to set a course.
-   To find out where you are going, you want to load the lists of planets in all three sectors:
+   Aarla pulled out three boxes. They contained data discs with maps of the known
+   parts of the ocean. All she needed to do was load the data into the ship’s
+   computer. Of course, the crew had bought the maps in some shady corner of the
+   harbor, so the data was far from standardized.
+
+   Before the submarine can travel anywhere, you need to set a course. To find out
+   where you are going, you want to load the map data from all three regions:
 
    :download:`panda_sector.csv`
 
