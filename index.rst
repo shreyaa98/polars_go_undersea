@@ -1,23 +1,21 @@
-.. polars_go_to_space documentation master file, created by
-   sphinx-quickstart on Sat Jan 28 10:05:39 2023.
+.. polars_go_undersea documentation master file, created by
+   sphinx-quickstart on Sat May 08 10:05:39 2026.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
 .. figure::
-   select_rows_and_columns/space_polar.jpeg
-   :alt: Space Polar
-   :align: center
+   title.png
 
 .. card::
    :shadow: lg
-   
-   Long long ago, in a galaxy far far away,
-   there lived polar bears exploring space.
-   They were curious explorers and expert data scientists.
-   The bears would pilot their star cruisers
-   to discover planets full of data,
-   analyze and plot that data,
-   and find new tastes of bamboo and berries no creature had tasted before.
+
+   Long long ago, beneath the eternal ice of the northern seas, 
+   there lived polar bears traveling the oceans in mighty submarines. 
+   They were fearless explorers and skilled data scientists. 
+   The polar bears would dive into the depths to discover hidden worlds full of data, 
+   to analyze and plot that data, and to uncover rare Arctic delicacies no creature had tasted before.
+
+.. figure:: submarine.png
 
 This is a Python tutorial featuring the `polars <https://pola.rs/>`__ library.
 It focuses on the technical basics of Data Science – working with tabular data.
@@ -67,15 +65,13 @@ Challenges
    challenges/pagerank/README.rst
 
 
-.. figure:: planet.png
+.. figure:: pandas_polars.png
 
 Image Sources
 -------------
 
-Most images for this tutorial were created with the generative neural networks `hotpot.ai <https://hotpot.ai/art-generator>`__
-and `deepai.org <https://deepai.org/>`__ . 
+Most images for this tutorial were created with the generative neural networks `ChatGPT.org <https://chatgpt.com/>`__ . 
 
-The spaceship logo was purchased from `thenounproject.com <https://thenounproject.com/>`__
 
 License
 -------

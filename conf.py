@@ -46,7 +46,7 @@ intersphinx_mapping = {
 html_theme = 'furo'
 html_theme_path = ['themes']
 html_static_path = ['_static']
-html_logo = "_static/banner_wide.svg"
+html_logo = "_static/banner_wide_1.svg"
 html_favicon = "_static/logo.svg"
 
 
@@ -59,7 +59,7 @@ html_theme_options = {
     "light_css_variables": {
         # see https://github.com/pradyunsg/furo/tree/main/src/furo/assets/styles/variables
         "color-card-background": "#005f99",
-        "color-card-foreground": "#ffffff",
+        "color-card-foreground": "#000000",
     },
 
     "dark_css_variables": {
