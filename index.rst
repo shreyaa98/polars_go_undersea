@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 .. figure::
-   select_rows_and_columns/space_polars.jpeg
+   select_rows_and_columns/space_polar.jpeg
    :alt: Space Polar
    :align: center
 
