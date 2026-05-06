@@ -59,6 +59,12 @@ html_theme_options = {
     "light_css_variables": {
         # see https://github.com/pradyunsg/furo/tree/main/src/furo/assets/styles/variables
         "color-card-background": "#005f99",
+        "color-card-foreground": "#ffffff",
+    },
+
+    "dark_css_variables": {
+        "color-card-background": "#003f66",
+        "color-card-foreground": "#ffffff",
     },
 }
 
