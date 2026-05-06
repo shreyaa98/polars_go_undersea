@@ -10,14 +10,10 @@ Preparations
 
     **Upgrade to Polars**
 
-    The ship’s computer boots, consoles flicker to life.
-    Today, something is different. A new engine hums beneath the floor.
-    Status lights spell out a single word: Polars.
-    Columns of data scroll by, sharper and faster than before.
-    With a tap of your paw, you route all sensors through the new core.
-    The bridge feels more alive. Your ship is ready for data at warp speed.
-
-    Before you can start your journey, you need to install a few programs on your ships' computer:
+    Aarla Frij opened the hatch to her submarine, swiftly slided down the ladder to the cockpit and cuddled comfortably into the captains seat. 
+    A new expedition into the depths of the seven oceans awaited her. A new adventure. What secrets were waiting out there?
+    A soft hum from the energy supply was the only sound in the cockpit. The ship was still asleep. Aarla turned to the right and started searching through a pile of notes. 
+    "Hm, somewhere here the ships instructions must be.". Finally, she pulled out a worn book. "OK, let's turn on this thing!".
 
 ----
 
