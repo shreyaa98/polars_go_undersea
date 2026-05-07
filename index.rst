@@ -65,7 +65,7 @@ Challenges
    challenges/pagerank/README.rst
 
 
-.. figure:: pandas_polars.png
+.. figure:: resized_pp.png
 
 Image Sources
 -------------
