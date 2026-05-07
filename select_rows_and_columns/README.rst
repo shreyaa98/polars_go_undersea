@@ -8,12 +8,13 @@ Select Rows and Columns
 
    **Find your Crew**
 
-   As the captain of a high-speed exploration vessel, you rely on your officers to keep everything running smoothly. 
-   Your ship’s systems process massive streams of data at incredible speed, and your crew roster is no exception.
-   Somewhere in the ship’s data core lies the list of your five trusted officers, but the display panel only shows raw data files.
-   Who are the officers serving on your ship?
+   "Time to leave", Captain Aarla thought. "Wait, the ship is completely empty. 
+   Wheere is everybody? Grm, of course they are hanging out at the bar."
+   Aarla slammed the bar door open. The bar was full of people. Aarla yelled: "WHERE IS MY CREW?". 
+   The room fell silent immediately. A few bears ducked behind a corner or jumped below a table. 
+   But for sure her crew was here. She went around looking.
 
-   To recognize your officers again, you’ll need to load the crew roster :download:`crew.csv` using Polars and inspect the data.
+   To recognize your crew members again, you’ll need to load the crew roster :download:`crew.csv` using Polars and inspect the data.
 
 ----
 
@@ -48,7 +49,7 @@ The inner one is a list of column names:
 
 .. code:: python
 
-   df[['black_spots', 'white_spots']]
+   df[['black_spots', 'blue_spots']]
 
 ----
 
@@ -105,7 +106,7 @@ It is easier to understand if you know the inner expression results in a boolean
 
    df.filter(pl.col('black_spots').is_between(3, 7))
 
-   df.filter((pl.col('black_spots') < 3) & (pl.col('white_spots') > 7))
+   df.filter((pl.col('black_spots') < 3) & (pl.col('blue_spots') > 7))
 
 Note that you have to use the **binary operators** `&`, `|` to combine multiple conditions.
 The **logical operators** `and`, `or` will not work.
@@ -121,7 +122,7 @@ Select random rows
 
 ----
 
-.. figure:: space_panda.jpeg
+.. figure:: selection.jpeg
 
 Challenge
 ---------
@@ -132,18 +133,18 @@ Challenge
    Select rows from the crew roster :download:`crew.csv` to find your five officers.
    You have a couple of hints:
    
-   * all of your officers have **at least 12 white spots**.
-   * three of your officers have **exactly 9 black spots**.
-   * none of your officers has **white ears** or **black ears**.
-   * the **Helmspanda** (responsible for steering the ship) has the **id 247**.
-   * the **Data Science Officer** (responsible for DS of course) has **more than 18 white spots. They also have their ears dyed in indigo**.
-   * the **Paw Plant** (responsible for the reactor and engines) has more white spots than the Pandalorian.
-   * the **Pandalorian** (responsible for weapons and tactics) has an **unknown ear color**. They wear a helmet all the time.
-   * the **Bamboo Chef** (responsible for nutrition) has **their ears dyed in chartreuse. They have fewer white spots than the paw plant**.
-   
+   * all of your officers have **at least 12 blue spots**
+   * three of your officers have **exactly 9 black spots**
+   * none of your officers has **pink ears** or **black ears**
+   * **Lumi** (helmsman) easily recognizable by her red headscarf
+   * **Ilmar** (ships carpenter) with at least 100 tattoos. Ears dyed in indigo.
+   * **Andromé** (navigator) with a green headscarf. Has ears dyed in chartreuse.
+   * **Boreaboy** (cook) with something between seven and ten earrings. Have an unknown ear color.
+   * and of course **Ming Ming** (intern ) from the remote planet of Pandalor, with no tattoos, earrings or scarf
+
    **Identify all five of them.**
 
-.. dropdown:: How many white spots do your officers have in total?
+.. dropdown:: How many blue spots do your officers have in total?
    :animate: fade-in
 
    There should be exactly 79.
