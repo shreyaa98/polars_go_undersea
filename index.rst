@@ -70,7 +70,7 @@ Challenges
 Image Sources
 -------------
 
-Most images for this tutorial were created with the generative neural networks `ChatGPT.org <https://chatgpt.com/>`__ . 
+Most images for this tutorial were created with the generative neural networks `ChatGPT.org <https://chatgpt.com/>` and `Canva.org <https://www.canva.com/>` . 
 
 
 License
