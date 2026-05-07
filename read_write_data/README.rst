@@ -1,12 +1,12 @@
 Read and Write Data
 ===================
 
-.. figure:: planets.jpeg
+.. figure:: navigation_sector_map.jpeg
 
 .. card::
    :shadow: lg
 
-   **Planet Data**
+   **Navigation Map Data**
 
    The submarine was safely in the harbor. The ship’s computer was up and running.
    It was time to inspect the course for the journey.
@@ -185,6 +185,9 @@ For writing a DataFrame to an output file, there is an equivalent set of functio
 .. seealso::
 
    `Polars I/O reference <https://docs.pola.rs/api/python/stable/reference/io.html>`__
+
+
+.. figure:: sector_coordinate_density_map.jpg
 
 ----
 
