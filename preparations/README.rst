@@ -14,6 +14,8 @@ Preparations
     A soft hum from the energy supply was the only sound in the cockpit. The ship was still asleep. Aarla turned to the right and started searching through a pile of notes. 
     "Hm, somewhere here the ships instructions must be.". Finally, she pulled out a worn book. "OK, let's turn on this thing!".
 
+    Before you can start your journey, you need to install a few programs on your ships' computer:
+
 ----
 
 Install Python
