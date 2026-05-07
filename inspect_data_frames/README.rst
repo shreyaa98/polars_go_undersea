@@ -6,15 +6,17 @@ Inspect DataFrames
 .. card::
    :shadow: lg
 
-   **Check all Stations**
+   **Captain’s Inspection**
 
-   Before you can take off, you need to check whether your ship is in a good shape.
-   The **Data Starfleet inspection procedure** is to check all stations of the ship,
-   and see whether there is anything that requires your attention.
+   Aarla went for a round of inspection through the ship. 
+   She always did before departing on a journey. 
+   It was a captains responsibility to make sure every room was in order. 
+   Also, there should be some tasty fish soup in the fridge! ...
+
    The ships computer has prepared a **tabular report** already.
    All you need to do is to see what is in the table.
-
-   Load the report :download:`ship_inspection.csv` into a `DataFrame` and check the following commands.
+   
+   Load the report :download:`stations.csv` into a `DataFrame` and check the following commands.
 
 ----
 
@@ -87,13 +89,19 @@ Sometimes a single wrong value converts a numerical column to strings.
 Generic overview
 ----------------
 
-Polars prints the table by default with types, so often print(df) is already enough for a quick overview.
-You can check data types, the number of entries for each column and memory size with a single command:
+Polars prints the table by default with data types, so often df is already enough for a quick overview.
+You can check data types, the number of entries for each column :
 
 .. code:: python
 
-   df.estimated_size('mb') # Estimated size is given in bytes by default.
+   df
+   df.glimpse()
 
+.. dropdown:: How to check the memory size of a DataFrame?
+   :animate: fade-in
+
+   The df.estimated_size() method returns the approximate memory usage of the DataFrame. 
+   By default size is shown in bytes. Specify 'mb' to display the result in megabytes
 
 ----
 
@@ -123,7 +131,7 @@ Challenge
 .. card::
    :shadow: lg
 
-   Inspect the report :download:`ship_inspection.csv`. Solve the following tasks
+   Inspect the report :download:`stations.csv`. Solve the following tasks
 
    - display the number of rows and columns
    - display the last 5 rows
