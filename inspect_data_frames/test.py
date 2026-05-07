@@ -25,4 +25,7 @@ df = pl.read_csv(r'C:\Users\shrey\Polars_Go_Undersea\inspect_data_frames\station
 # print(df.glimpse())
 # print(df['security'].value_counts())
 # print(df['security'].unique())
-print(df.select(5))
+# print(df.select(5))
+print(df.n_unique())
+print(df.unique())
+print(df.select(pl.all().null_count()))
