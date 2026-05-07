@@ -28,7 +28,7 @@ You can think of it as a table of data, with columns (each of a specific type) a
 Unlike pandas, Polars does not have an implicit index; all data is stored in columns, and if you want an “index,” you create it explicitly. Each column is a `polars.Series`.
 Polars is designed for high-performance and parallel computation, making it especially fast on large datasets.
 
-.. figure:: dataframe.svg
+.. figure:: dataframe.png
 
 ----
 
