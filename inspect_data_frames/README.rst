@@ -16,7 +16,7 @@ Inspect DataFrames
    The ships computer has prepared a **tabular report** already.
    All you need to do is to see what is in the table.
    
-   Load the report :download:`stations.csv` into a `DataFrame` and check the following commands.
+   Fasten your seat belts and load the report :download:`stations.csv` into a `DataFrame` and check the following commands.
 
 ----
 

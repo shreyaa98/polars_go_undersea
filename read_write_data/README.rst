@@ -9,11 +9,10 @@ Read and Write Data
    **Navigation Map Data**
 
    The submarine was safely in the harbor. The ship’s computer was up and running.
-   It was time to inspect the course for the journey.
-
-   Aarla pulled out three boxes. They contained data discs with maps of the known
-   parts of the ocean. All she needed to do was load the data into the ship’s
-   computer. Of course, the crew had bought the maps in some shady corner of the
+   It was time to inspect the course for the journey. Aarla pulled out three boxes. 
+   They contained data discs with maps of the known parts of the ocean. 
+   All she needed to do was load the data into the ship’s computer. 
+   Of course, the crew had bought the maps in some shady corner of the
    harbor, so the data was far from standardized.
 
    Before the submarine can travel anywhere, you need to set a course. To find out
