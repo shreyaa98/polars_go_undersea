@@ -123,7 +123,7 @@ If you are not interested in the count, check the unique values:
 
 ----
 
-.. figure:: inspect.jpeg
+.. figure:: inspect.png
 
 Challenge
 ---------
