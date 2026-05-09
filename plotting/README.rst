@@ -10,9 +10,17 @@ Navigation
 .. card::
    :shadow: lg
 
-   Your crew needs an accurate and detailed map to navigate.
-   Of course, they want to see the map on the huge screen on the bridge.
-   
+   After a few days, the ship reached the eternal ice. 
+   The polar bears took a last look at the sun and took a deep breath. 
+   Then they went under deck, closed the hatch and secured it. 
+   Andromé addressed the rest of the crew: "Listen up. We will travel underwater for at least two weeks. 
+   From time to time we will need to get to the surface and take up fresh air. 
+   There are plenty of holes in the ice, we just need to visit a few of them. 
+   Here, take a look." She pressed a key on the console.
+
+   Boreaboy looked at the screen sceptically. "What's on?", Andromé asked. 
+   "Your map is empty", Borea replied. "No problem, we have all the data stored. Let's create a new one".
+
    Let's work through the **Data Starfleet Procedure to create a high-quality diagram**.
 
 .. figure:: epsilon_sector.png
