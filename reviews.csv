@@ -1,0 +1,26 @@
+Index,TOPIC,Reviews by KR,STATUS,SP COMMENTS
+1,links,,False,Need to update the links from pandas to polars 
+2,rename repository,Polars explores the deepsea,True,
+3,descriptive stats,"maybe it is better to supply the penguin data as a
+csv file to avoid the pandas/polars conversion logic. Let's not change
+it now.",True,
+4,"pivot tables"," this is bad. You must not replace an image by another
+author by a different one and leave the caption intact. Please restore
+the original image immediately.",True,
+5,"pivots",the bar plot needs an y-axis label,True,
+6,edit columns,"code looks much more convoluted than before. Maybe there
+is a simpler solution. Let's finish and publish the entire set and then
+refine.",False,
+7,select_rows_and_columns,"did you check whether the crew generation script produces an identical
+result? Since the underlying implementation is different, we might end
+up with a completely different file.",True,"Yes, they are exactly the same"
+8,data_wrangling,"cargo bay: instead of the .alias(""crate_str"") it might be easier to
+say with_columns(crate_str=pl.col(...",True,requires review by KR
+9,data_wrangling,"cargo bay: remove complete paragraph ""Set the index column"" -
+filtering was covered in previous chapter",True,requires review by KR
+10,data_wrangling,"cargo bay: missing values df.null_count().to_pandas().plot.bar()
+requires pandas to be installed. There might be a shorter option using
+matplotlib directly.",True,requires review by KR
+11,high_quality_plots,high-quality plots step 9: there should be a plt.savefig() command,True,requires review by KR
+12,high_quality_plots,,False,"Do i have to generate a new scatterplot that represent holes under 
+the ice and also need to update the .ipynb file in the folder"
