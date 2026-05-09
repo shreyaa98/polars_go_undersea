@@ -46,7 +46,7 @@ Convert values to strings:
 
 .. code:: python
 
-   df = df.with_columns(crate_str=pl.col("crate_no").cast(pl.Utf8))
+   df = df.with_columns(pl.col("crate_no").cast(pl.Utf8).alias("crate_str"))
 
 You can easily combine multiple columns using standard operators:
 
@@ -75,11 +75,13 @@ values is:
 
    from matplotlib import pyplot as plt
 
-   nulls = df.null_count().transpose(include_header=True, header_name="column", column_names=["null_count"])
-   plt.bar(nulls["column"], nulls["null_count"])
+   nulls = df.null_count()
+   
+   plt.bar(nulls.columns, nulls.row(0))
    plt.xticks(rotation=45, ha="right")
    plt.tight_layout()
    plt.show()
+
 
 Often, you might simply want to kick out all rows in which a None or NaN
 occurs:

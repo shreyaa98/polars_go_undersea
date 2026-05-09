@@ -10,7 +10,7 @@ index = pl.Series("id", np.arange(N))
 df = pl.DataFrame(
     {
         "id": np.arange(N),
-        "white_spots": np.random.randint(1, 20, size=N),
+        "blue_spots": np.random.randint(1, 20, size=N),
         "black_spots": np.random.randint(1, 20, size=N),
         "ears": np.random.choice(EARS, size=N)
     }
