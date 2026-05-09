@@ -5,7 +5,7 @@ High-Quality Plots
 Navigation
 ----------
 
-.. figure:: into_space.jpeg
+.. figure:: into_ice.png
 
 .. card::
    :shadow: lg
@@ -23,7 +23,7 @@ Navigation
 
    Let's work through the **Data Starfleet Procedure to create a high-quality diagram**.
 
-.. figure:: epsilon_sector.png
+.. figure:: holes_under_ice.png
 
 ----
 
