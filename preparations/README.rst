@@ -2,7 +2,7 @@
 Preparations
 ============
 
-.. figure:: polars_control_room.jpeg
+.. figure:: polars_control_room.png
 
 .. card::
     :shadow: lg
@@ -139,7 +139,7 @@ Your computer should respond with:
 
 ----
 
-.. figure:: new_world.jpeg
+.. figure:: new_world.png
 
 .. card::
    :shadow: lg
