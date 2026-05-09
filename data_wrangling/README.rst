@@ -4,20 +4,22 @@ Data Wrangling
 Cargo Bay
 ---------
 
-.. figure:: containers.jpeg
+.. figure:: containers.png
 
 .. card::
    :shadow: lg
 
-   One day you decide to inspect the cargo bay of your spaceship.
+   Ilmar stepped into the ships storeroom. 
+   "I need some size 15 screws, they should be here". 
+   A shelf with open and half-open cargo boxes stood in the middle of the room as if it had been left there in a hurry. 
+   More cargo boxes were not very neatly piled up along the walls.
+   When Ilmar stepped towards the shelf, he suddenly tripped over another box. 
+   He toppled over, rolled through the room and crashed into the shelf. 
+   The room collapsed in an avalanche of boxes and their content: tools, screws, rubber joins, fish tins and lots of other stuff.
 
-   What a mess!
+   When the dust settled, Ilmar raised his head from the debris. "Holy Polar," he muttered, "I guess I will have to clean up here."
 
-   Many of the containers are badly labeled.
-   The radioactive waste is next to the ice cream.
-   Some containers are not labeled at all.
-
-   Time for a proper cleanup of the cargo docs in :download:`cargo.csv`. 
+   Looks like it’s time to sort out the chaos in :download:`cargo.csv`. 
 
 ----
 
@@ -90,9 +92,7 @@ Alternatively, you might want to fill in a best guess value:
 
 .. code:: python
 
-   df_fixed = df.fill_null(42)
-   # or
-   df_fixed = df.fill_null(strategy="median")
+   df_fixed = df.with_columns(pl.col("units").fill_null(pl.col("units").median()))
 
 There are many, many strategies to fix missing values (imputation
 methods).
@@ -121,7 +121,7 @@ back to a ``for`` loop over all the rows.
        print(i, row['type'])
 
 
-.. figure:: family.jpg
+.. figure:: extras.png
 
 Challenge
 ---------
