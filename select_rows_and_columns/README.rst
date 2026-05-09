@@ -138,10 +138,10 @@ Challenge
    * none of your officers has **pink ears** or **black ears**
    * **Lumi** (helmsman) easily recognizable by her red headscarf, has the **id 247**
    * **Ilmar** (ships carpenter) with at least 100 tattoos. **Has more than 18 blue spots and also have ears dyed in indigo**
-   * **Andromé** (navigator) with a green headscarf. has more blue spots than the Boreaboy.
+   * **Andromé** (navigator) with a green headscarf. Has more blue spots than the Boreaboy.
    * **Boreaboy** (cook) with something between seven and ten earrings. Has an **unknown ear color**.
    * and of course **Ming Ming** (intern ) from the remote planet of Pandalor, with no tattoos, earrings or scarf
-      Has their ears dyed in chartreuse. They have fewer blue spots than the Andromé.
+   **Has their ears dyed in chartreuse. They have fewer blue spots than the Andromé.**
 
    **Identify all five of them.**
 
