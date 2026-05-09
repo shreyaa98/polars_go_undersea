@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'polars_go_undersea'
+project = 'polars_explores_deep_sea'
 copyright = '2026, Kristian Rother, Shreyaasri Prakash'
 author = 'Kristian Rother, Shreyaasri Prakash'
 release = '0.1'
@@ -52,7 +52,7 @@ html_favicon = "_static/logo.svg"
 
 html_theme_options = {
     "sidebar_hide_name": True,
-    "source_repository": "https://github.com/shreyaa98/polars_go_undersea/",
+    "source_repository": "https://github.com/shreyaa98/polars_explores_deep_sea.git",
     "source_branch": "main",
     "source_directory": "/",
 

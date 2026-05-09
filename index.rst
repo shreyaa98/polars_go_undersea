@@ -1,4 +1,4 @@
-.. polars_go_undersea documentation master file, created by
+.. polars_explores_deep_sea documentation master file, created by
    sphinx-quickstart on Sat May 08 10:05:39 2026.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
