@@ -9,7 +9,7 @@ Select Rows and Columns
    **Find your Crew**
 
    "Time to leave", Captain Aarla thought. "Wait, the ship is completely empty. 
-   Wheere is everybody? Grm, of course they are hanging out at the bar."
+   Wheere is everybody? Grm! of course they are hanging out at the bar."
    Aarla slammed the bar door open. The bar was full of people. Aarla yelled: "WHERE IS MY CREW?". 
    The room fell silent immediately. A few bears ducked behind a corner or jumped below a table. 
    But for sure her crew was here. She went around looking.
@@ -122,7 +122,7 @@ Select random rows
 
 ----
 
-.. figure:: selection.jpeg
+.. figure:: selection.png
 
 Challenge
 ---------
@@ -136,11 +136,12 @@ Challenge
    * all of your officers have **at least 12 blue spots**
    * three of your officers have **exactly 9 black spots**
    * none of your officers has **pink ears** or **black ears**
-   * **Lumi** (helmsman) easily recognizable by her red headscarf
-   * **Ilmar** (ships carpenter) with at least 100 tattoos. Ears dyed in indigo.
-   * **Andromé** (navigator) with a green headscarf. Has ears dyed in chartreuse.
-   * **Boreaboy** (cook) with something between seven and ten earrings. Have an unknown ear color.
+   * **Lumi** (helmsman) easily recognizable by her red headscarf, has the **id 247**
+   * **Ilmar** (ships carpenter) with at least 100 tattoos. **Has more than 18 blue spots and also have ears dyed in indigo**
+   * **Andromé** (navigator) with a green headscarf. has more blue spots than the Boreaboy.
+   * **Boreaboy** (cook) with something between seven and ten earrings. Has an **unknown ear color**.
    * and of course **Ming Ming** (intern ) from the remote planet of Pandalor, with no tattoos, earrings or scarf
+      Has their ears dyed in chartreuse. They have fewer blue spots than the Andromé.
 
    **Identify all five of them.**
 
