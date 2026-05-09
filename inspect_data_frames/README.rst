@@ -1,7 +1,7 @@
 Inspect DataFrames
 ==================
 
-.. figure:: corridor.jpeg
+.. figure:: corridor.png
 
 .. card::
    :shadow: lg

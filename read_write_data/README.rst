@@ -1,7 +1,7 @@
 Read and Write Data
 ===================
 
-.. figure:: navigation_sector_map.jpeg
+.. figure:: navigation_sector_map.png
 
 .. card::
    :shadow: lg
