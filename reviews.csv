@@ -24,3 +24,7 @@ matplotlib directly.",True,requires review by KR
 11,high_quality_plots,high-quality plots step 9: there should be a plt.savefig() command,True,requires review by KR
 12,high_quality_plots,,False,"Do i have to generate a new scatterplot that represent holes under 
 the ice and also need to update the .ipynb file in the folder"
+13,logo,,True, "Logo image color is blue, my idea behind thta logo was to match the deepsea theme and add a polar bear instead of submarine. 
+THE LOGO OF OFFICIAL POLARS IS ALSO BLUE BUT IT IS OF DIFFERENT SIZE,SHAPE AND POSTURE. But let me know what you think!"
+14,images format and size,,True,"The images take a few seconds to load on the page, is it because of the format or the size(I changed the format from jpeg to png, in my opinion 
+it is not the format, it is the size (Please let me know what it is)"
