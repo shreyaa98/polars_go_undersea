@@ -31,6 +31,6 @@ jobs:
         port: 22
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: _build/html/*
-        target: /www/academis/polars_go_to_space
+        target: /www/academis/polars_go_undersea
         rm: true
         strip_components: 2

@@ -45,7 +45,6 @@ Contents
    aggregation/README.rst
    database/README.rst
    dashboard/README.rst
-   hall_of_fame.rst
    links.rst
 
 Challenges
@@ -62,7 +61,6 @@ Challenges
    challenges/titanic.rst
    challenges/gapminder/README.rst
    challenges/pingubase/README.rst
-   challenges/pagerank/README.rst
 
 
 .. figure:: pandas_polars.png
