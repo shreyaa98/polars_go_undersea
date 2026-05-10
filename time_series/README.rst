@@ -2,7 +2,7 @@
 Time Series
 ===========
 
-.. figure:: reactor.jpeg
+.. figure:: new_world.png
 
 Gravity Rift
 ------------

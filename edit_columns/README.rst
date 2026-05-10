@@ -2,7 +2,7 @@
 Edit columns
 ============
 
-.. figure:: undock.jpeg
+.. figure:: polars_control_room.png
 
 .. card::
    :shadow: lg
