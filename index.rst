@@ -39,8 +39,8 @@ Contents
    plotting/README.rst
    descriptive_statistics/README.rst
    pivots/README.rst
-   edit_columns/README.rst
    string_handling/README.rst
+   edit_columns/README.rst
    time_series/README.rst
    plotting_maps/README.rst
    create_data_frames/README.rst
