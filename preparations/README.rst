@@ -2,7 +2,7 @@
 Preparations
 ============
 
-.. figure:: polars_control_room.png
+.. figure:: pandas_polars.png
 
 .. card::
     :shadow: lg
@@ -11,20 +11,41 @@ Preparations
 
     Aarla Frij opened the hatch to her submarine, swiftly slided down the ladder to the cockpit and cuddled comfortably into the captains seat. 
     A new expedition into the depths of the seven oceans awaited her. A new adventure. What secrets were waiting out there?
-    A soft hum from the energy supply was the only sound in the cockpit. The ship was still asleep. Aarla turned to the right and started searching through a pile of notes. 
-    "Hm, somewhere here the ships instructions must be.". Finally, she pulled out a worn book. "OK, let's turn on this thing!".
+    A soft hum from the energy supply was the only sound in the cockpit. The ship was still asleep.
+    
+    *"I still have time for a nap before the mission,"* Aarla thought.
+    
+    Suddenly another bear came whistling into the cockpit, balancing tea cups on a tablet.
+    That was Ming Ming, the intern from the remote world of Pandalor. Aarla sighed.. no nap.
 
-    Before you can start your journey, you need to install a few programs on your ships' computer:
+    *"Hello captain! I've been down here for a while already. The ship is all right, but I think the computer needs a software update?
+    Can you show me how to do this? Pleeease."*
+
+    Aarla turned to the right and started searching through a pile of notes.
+
+    *"Hm, somewhere here should be the ships instructions,"* Aarla muttered as she continued her search. 
+    
+    Finally, she pulled out a worn handbook. 
+    
+    *"OK, let's turn this thing on!"*.
+
 
 ----
 
 Install Python
 --------------
 
+**Before you can start your journey, you need to install a few programs on your ships' computer.**
+
 First, you need to install a Python distribution that allows you to run the **Jupyter Notebook** format.
 **Anaconda** is a one-stop installation that contains all necessary Python packages and an editing environment.
 
 Go to `www.anaconda.com  <https://www.anaconda.com/>`__ and download Anaconda for your system (the free version) and follow the installation instructions.
+
+.. dropdown:: Can I use the standard Python installation?
+   :animate: fade-in
+
+   Yes. The version from `www.python.org <https://www.python.org>` works fine. While Anaconda is easier to get started with, many professional developers prefer the slimmer standard Python installation.
 
 .. dropdown:: Can I use VSCode instead?
    :animate: fade-in
@@ -122,24 +143,21 @@ You should see the paragraph formatted as HTML.
 Execute Python Code
 -------------------
 
-Write a simple new command Insert a new cell.
-Check the options of the `print()` function. 
-Then, run the traditional command to greet your computer:
+Write a simple Python command. Insert a new cell.
+Then, run the command to switch on all systems:
 
 .. code:: python
 
-    print("hello world")
+    print("power up submarine")
 
 Execute the code with the **play** button on top or press `Shift + Enter`.
 Your computer should respond with:
 
 .. code::
 
-    hello world
+    power up submarine
 
 ----
-
-.. figure:: new_world.png
 
 .. card::
    :shadow: lg

@@ -10,16 +10,19 @@
    :shadow: lg
 
    Long long ago, beneath the eternal ice of the northern seas, 
-   there lived polar bears traveling the oceans in mighty submarines. 
+   there lived polar bears traveling the oceans in their mighty submarines. 
    They were fearless explorers and skilled data scientists. 
-   The polar bears would dive into the depths to discover hidden worlds full of data, 
-   to analyze and plot that data, and to uncover rare Arctic delicacies no creature had tasted before.
+   The polar bears would dive into the deep waters to discover hidden worlds, collect data, 
+   to analyze and plot it, and to uncover seafood no creature had tasted before.
 
 .. figure:: submarine.png
 
-This is a Python tutorial featuring the `polars <https://pola.rs/>`__ library.
-It focuses on the technical basics of Data Science – working with tabular data.
-On the way, you will help the polar bears explore deepsea.
+.. card::
+   :shadow: lg
+
+   This is a Python tutorial featuring the `polars <https://pola.rs/>`__ library.
+   It focuses on the technical basics of Data Science – working with tabular data.
+   On the way, you will help the polar bears explore the deep sea.
 
 
 Contents
@@ -47,23 +50,28 @@ Contents
    dashboard/README.rst
    links.rst
 
-Challenges
-----------
+.. 
+   chapters to be added later
 
-.. toctree::
-   :maxdepth: 1
+   these three would fit perfectly into the arctic theme
 
-   challenges/powerful_pivots.rst
-   challenges/babynames/read_data.rst
-   challenges/babynames/timeline.rst
-   challenges/babynames/last_letters.rst
-   challenges/climate_stripes/README.rst
-   challenges/titanic.rst
-   challenges/gapminder/README.rst
-   challenges/pingubase/README.rst
+      challenges/titanic.rst
+      challenges/climate_stripes/README.rst
+      challenges/pingubase/README.rst
 
+   the challenges fit less well
+   Challenges
+   ----------
+   
+   .. toctree::
+      :maxdepth: 1
+   
+      challenges/powerful_pivots.rst
+      challenges/babynames/read_data.rst
+      challenges/babynames/timeline.rst
+      challenges/babynames/last_letters.rst
+      challenges/gapminder/README.rst
 
-.. figure:: pandas_polars.png
 
 Image Sources
 -------------
@@ -83,4 +91,4 @@ See `creativecommons.org <https://creativecommons.org/licenses/by-sa/4.0/>`__ .
 Acknowledgements
 ----------------
 
-I would like to thank the following people for inspiring exchange on training and Python that this material has benefited from: Jasmin Touati, Veit Schiele, Dinu Gherman, Pedro Fernandes, Tomasz Puton, Edward Jenkins, Bernard Szlachta, Robert Lehmann, Allegra Via, Kaja Milanowska, Anna Philips, Paul Wlodkowski, Tom Gadsby, Stefan Roth, Gesa Johannsen, Ugur Ural, Malte Bonart, Paula Gonzalez, Samuel McGuire, Sara Maras, Carmine Somma, Kiran Challa, Dina Deifallah, Marija Vlajic, Emely Henninger and Magdalena Rother.
+We would like to thank the following people for inspiring exchange on training and Python that this material has benefited from: Jasmin Touati, Veit Schiele, Dinu Gherman, Pedro Fernandes, Tomasz Puton, Edward Jenkins, Bernard Szlachta, Robert Lehmann, Allegra Via, Kaja Milanowska, Anna Philips, Paul Wlodkowski, Tom Gadsby, Stefan Roth, Gesa Johannsen, Ugur Ural, Malte Bonart, Paula Gonzalez, Samuel McGuire, Sara Maras, Carmine Somma, Kiran Challa, Dina Deifallah, Marija Vlajic, Emely Henninger and Magdalena Rother.

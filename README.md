@@ -1,9 +1,10 @@
 # Polars Go Undersea
 
-A data analysis exercise featuring the polars library and a space travel story.
+![the polar bears submarine](submarine.png)
 
-Live site: [www.academis.eu/polars_go_to_space](https://www.academis.eu/polars_go_undersea
-)
+A data analysis tutorial featuring the polars library and a deep sea adventure.
+
+Live site: [www.academis.eu/polars_go_undersea](https://www.academis.eu/polars_go_undersea)
 
 Public repo: https://github.com/shreyaa98/polars_go_undersea
 
