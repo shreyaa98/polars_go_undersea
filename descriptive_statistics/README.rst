@@ -10,20 +10,28 @@ Encounter with Penguins
 .. card::
    :shadow: lg
 
-   You have finally found a colony of the legendary space penguins.
-   They live on an icy planet with oceans and many islands.
-   The strange creatures seem to be comfortable spending lots of time in water.
-   They also seem to be very resistant to cold.
-   Moreover, the penguins seem to be an intelligent species.
-   Establishing communications with them could be fun.
+   One morning, Lumi is alone on the bridge. He is cruising through the cold waters of the far southern sea.
+   The submarine is gently sliding through a large school of fish.
+   Suddenly many large projectiles are splashing into the water in front, left and right of the ship.
+   Lumi immediately sounds the alarm:
 
-   But you decide to start with a preliminary scan of the colony:
+   **"WE ARE UNDER ATTACK!"*
 
-   .. code:: python3
+   Lumi gets ready for an evasive maneuver: nose-diving to the deeper depths.
+   Only then, he realizes, that the projectiles are really some kind of animals. They dive deep into the water, then rise up and go after the fish in an underwater ballet. Lumi is amazed. Never has he seen anything like that before.
+
+   As the rest of the crew rushes to the bridge, he whispers:
+
+   *"Look, we have found the penguins!"*
+
+   **Conduct a preliminary scan of the swimming penguins:**
+
+   .. code:: python
 
       import seaborn as sns
 
       df = sns.load_dataset("penguins")
+      df = pl.from_pandas(df)
 
 
 The Goal of Descriptive Statistics
@@ -32,12 +40,11 @@ The Goal of Descriptive Statistics
 Once your data is tidy and you have created a few exploratory plots, you usually want to describe your data in more detail. This is where **Descriptive Statistics** come in. This is an obligatory step whenever you are working with data whether you want to deliver an expert opinion, train a fully automated Machine Learning algorithm or monitor data in production.
 Statistics go very deep sometimes, but you can safely start with a few straightforward metrics. You find an overview here.
 
-A good step to start with is to **write down questions** you are interested in.
-E.g.:
+A good step to start with is to **write down questions** you are interested in, e.g.:
 
 * how many penguins are there?
-* how large are the beaks of penguins?
-* are there any subgroups of penguins?
+* how large are their beaks?
+* are there any subgroups?
 * are there any exceptionally small or tall penguins?
 
 The descriptive statistics metrics help you to come up with answers that are numbers.
@@ -61,13 +68,13 @@ The **arithmetic mean** is the sum of all data points divided by their number:
    
 It can be calculated in a single line:
 
-.. code:: python3
+.. code:: python
 
    df["bill_length_mm"].mean()
 
 Often, you want to separate your metrics by categories:
 
-.. code:: python3
+.. code:: python
 
    df.groupby("species")["bill_length_mm"].mean()
 
@@ -82,20 +89,19 @@ The median
 
 The **median** sorts the data points and then takes the point in the middle (or the average of two if the number is even).
 
-.. code:: python3
+.. code:: python
 
     df["bill_length_mm"].median()
 
 The median is less prone to outliers than the mean.
+
 Try adding a godzilla-sized penguin to the list and see how both metrics change:
-In Polars, there is no direct way to change a value in a column, but you can use the ``when-then-otherwise`` construct. 
+In ``polars``, there is no direct way to change a value in a column, but you can use the ``when-then-otherwise`` construct. 
 But before that, you need to convert the pandas dataframe to a polars dataframe:
 
-.. code:: python3
+.. code:: python
    
-   df2 = pl.from_pandas(df)
-
-   df = df2.with_columns(
+   df = df.with_columns(
       pl.when(pl.arange(0, pl.len()) == 1)
       .then(2000)
       .otherwise(pl.col("bill_length_mm"))
@@ -110,14 +116,14 @@ The mode
 The mode is simply the most frequent value of a variable.
 It makes more sense if your variable is an **integer, ordinal or category value**, and less with **float scalars**.
 
-.. code:: python3
+.. code:: python
 
     df["species"].mode()
 
 In a scalar variable, you would also want to check if there are multiple modes.
 A good tool for checking modes is the histogram:
 
-.. code:: python3
+.. code:: python
 
     df["bill_length_mm"].hist(bins=20)
 
@@ -134,7 +140,7 @@ The range
 
 The **range** is simply the word used by statisticians for the distance between the **minimum** and **maximum** value.
 
-.. code:: python3
+.. code:: python
  
    range = df["bill_length_mm"].max() - df["bill_length_mm"].min()
 
@@ -149,7 +155,7 @@ A metric less prone to outliers is the **standard deviation**, or the square roo
 
 An intuitive description of the standard deviation is that roughly 68% of the values are within one standard deviation from the mean, assuming a **normal distribution** (sorry it does not get more intuitive than that).
 
-.. code:: python3
+.. code:: python
 
    df["bill_length_mm"].std()
 
@@ -161,7 +167,7 @@ Quartiles and everything
 **Quartiles** are the ranges in which portions of **25%** of the data are found.
 You can calculate these and lots of other statistics with a one-stop function:
 
-.. code:: python3
+.. code:: python
 
    df["bill_length_mm"].describe()
 
@@ -203,13 +209,13 @@ Inspect a scatter plot
 
 In a scatter plot, you want to check if there are any visible sub-groups, linear or other correlations or if the data is simply a cloud of dots:
 
-.. code:: python3
+.. code:: python
 
    sns.scatterplot(data=df, x="bill_length_mm", y="bill_depth_mm", hue="species")
 
 To go for a full swing, try the pairplot:
 
-.. code:: python3
+.. code:: python
 
     sns.pairplot(df, hue='species')
 
@@ -230,18 +236,16 @@ value meaning
 
 Calculating correlation coefficients for all scalar columns in pandas is easy enough:
 
-.. code:: python3
+.. code:: python
 
    df.corr()
 
 If you want to correlate the categorical data as well, you need to use **One-Hot Encoding**:
 
-.. code:: python3
+.. code:: python
 
-   df_pl = pl.from_pandas(df)
-
-   species_dummies = df_pl.to_dummies(columns=["species"])
-   df_pl_concat = df_pl.hstack(species_dummies)
+   species_dummies = df.to_dummies(columns=["species"])
+   df_concat = df.hstack(species_dummies)
 
 .. warning::
 
@@ -249,10 +253,10 @@ If you want to correlate the categorical data as well, you need to use **One-Hot
 
 The correlations can be plotted very nicely if you make some extra space for the labels:
 
-.. code:: python3
+.. code:: python
 
    plt.figure(figsize=(12,8))
-   sns.heatmap(df2.corr(), annot=True)  
+   sns.heatmap(df.corr(), annot=True, vmin=-1.0, vmax=1.0)
 
 .. figure:: correlation.png
 
@@ -287,13 +291,6 @@ Challenge
    :shadow: lg
 
    Examine the scanned data of the penguin colony.
-
-   .. code:: python3
-
-      import seaborn as sns
-
-      df = sns.load_dataset('penguins')
-
    Answer the following questions:
    
    1. calculate the total weight of all penguins
