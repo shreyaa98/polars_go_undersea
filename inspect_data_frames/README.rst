@@ -79,22 +79,28 @@ Sometimes a single wrong value converts a numerical column to strings.
 
    df.dtypes
 
-.. dropdown:: What does the type `object` mean?
+.. dropdown:: What does the data type `i64` mean?
    :animate: fade-in
 
-   The type `object` usually means that the column contains strings.
+   The type `i64` refers to an integer with 64 bit precision.
+   It is able to cover numbers from `-9223372036854775808` to `9223372036854775807`.
+   Floating point numbers also have a precision in bits.
 
 ----
 
 Generic overview
 ----------------
 
-Polars prints the table by default with data types, so often df is already enough for a quick overview.
-You can check data types, the number of entries for each column :
+Polars prints the table by default with data types, so often ``df`` is already enough for a quick overview:
 
 .. code:: python
 
    df
+
+You can check data types and the number of entries for each column:
+
+.. code:: python
+
    df.glimpse()
 
 .. dropdown:: How to check the memory size of a DataFrame?
@@ -123,7 +129,25 @@ If you are not interested in the count, check the unique values:
 
 ----
 
-.. figure:: inspect.png
+Attributes and methods of DataFrames
+------------------------------------
+
+======================== ==================================
+command                  description  
+======================== ==================================
+`df.shape`               number of rows and columns
+`df.height`              number of rows
+`df.width`               number of columns
+`df.schema`              shows data types
+`df.head(n)`             shows first n lines
+`df.tail(n)`             shows last n lines
+`df.glimpse()`           quick summary
+`df[col].value_counts()` counts unique values in a column
+`df[col].unique()`       shows unique values in a colunmn
+`df.estimated_size()`    returns size in bytes
+`df.n_chunks()`          returns number of memory chunks
+======================== ==================================
+
 
 Challenge
 ---------
