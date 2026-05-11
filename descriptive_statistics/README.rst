@@ -15,7 +15,7 @@ Encounter with Penguins
    Suddenly many large projectiles are splashing into the water in front, left and right of the ship.
    Lumi immediately sounds the alarm:
 
-   **"WE ARE UNDER ATTACK!"*
+   **"WE ARE UNDER ATTACK!"**
 
    Lumi gets ready for an evasive maneuver: nose-diving to the deeper depths.
    Only then, he realizes, that the projectiles are really some kind of animals. They dive deep into the water, then rise up and go after the fish in an underwater ballet. Lumi is amazed. Never has he seen anything like that before.
@@ -71,12 +71,6 @@ It can be calculated in a single line:
 .. code:: python
 
    df["bill_length_mm"].mean()
-
-Often, you want to separate your metrics by categories:
-
-.. code:: python
-
-   df.groupby("species")["bill_length_mm"].mean()
 
 .. note::
 
@@ -187,18 +181,6 @@ You should be able to distinguish the following distributions visually: uniform,
 
 ----
 
-Normalize
----------
-
-Sometimes it is easier to analyze data if you transform it before analyzing. Normalizing is a generic term that refers to all kinds of mathematical transformations. Some frequent normalization procedures are:
-
-* calculating percentages against a mean value
-* scaling the data to values from 0.0 to 1.0
-* scaling the data to a standard normal distribution (mean 0.0 and standard deviation 1.0)
-* taking the binary or decadic logarithm of all values
-
-----
-
 Correlation
 -----------
 When you want to describe more than one variable, things obviously get more complicated.
@@ -290,7 +272,7 @@ Challenge
 .. card::
    :shadow: lg
 
-   Examine the scanned data of the penguin colony.
+   Examine the data of the penguins.
    Answer the following questions:
    
    1. calculate the total weight of all penguins

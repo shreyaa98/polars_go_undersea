@@ -37,27 +37,24 @@ Start by loading the penguin data:
    df = df.drop_nulls()
 
 
-Pivot Tables
-------------
+Simple aggregations
+-------------------
 
-A **pivot table** is a generic summary of tabular data that is well-known from spreadsheet tools.
-It creates a table where the rows and colums are defined by categorical columns of the data.
+An **aggregation** is a generic summary of tabular data.
+It creates a table where the rows are defined by one categorical column of the data.
+As a result, there are much fewer rows, making the data much easier to plot.
 
-To create a simple pivot of your data, you need to have at least **one categorical and one numerical column and a function that aggregates data**:
+To create a simple aggregation from your data, you need to have at least **one categorical and one numerical column and a function that aggregates data**:
 
 ::
 
    categories + numbers + aggregation function -> pivot
 
-Let's examine one example:
+Let's examine one example: the mean bill length for each species:
 
-.. code:: python3
+.. code:: python
 
-   df.pivot(
-      values="bill_length_mm",       
-      on="species",            
-      aggregate_function="mean"      
-   )
+   df.group_by("species").agg(pl.col("bill_length_mm").mean())
       
 Here, each distinct value in ``index`` results in a separate row. The ``values`` parameter defines which column will be used for aggregation.
 
@@ -65,14 +62,15 @@ Here, each distinct value in ``index`` results in a separate row. The ``values``
 Pivot Tables with rows and columns
 ----------------------------------
 
-Many times, you will use two categorical columns so that the pivot table has multiple columns.
+A **pivot table** is a well-known tool from spreadsheet applications.
+In contrast to simple aggregations, you will use two categorical columns so that the pivot table has multiple columns.
 In that case, one categorical column defines the rows, the other defines the columns of the pivot table:
 
 ::
 
    categories1 + categories2 + numbers + aggregation function -> pivot
 
-The code requires one more line:
+The ``pivot()`` method allows to specify all of these in one call:
 
 .. code:: python3
 
