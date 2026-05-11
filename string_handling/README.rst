@@ -14,11 +14,11 @@ Diplomacy
    Their delegates meet yours. They are standing neatly in a row in front of you.
    Boreaboy blurts out:
 
-   *"There is one for each of us – come on, let's eat them!"*
+   *"There is one for each of us – come on, let's eat!"*
    
-   Aarla rolls here eyes. 
+   Aarla rolls her eyes. 
 
-   *"You know very well that we are not eating civilized beings. And I don't want feathers everywhere. Let's make contact."*
+   *"You know very well that we are not eating civilized beings. And I don't want feathers everywhere. We should try to make contact."*
 
    The meeting turns out a bit frosty. One penguin in the middle steps forward and places a tiny fish in front of the polar delegation.
    Is that all they have to offer? Then they start chattering in a strange high-pitched language:
