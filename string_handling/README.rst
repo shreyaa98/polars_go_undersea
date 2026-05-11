@@ -10,15 +10,18 @@ Diplomacy
 .. card::
    :shadow: lg
 
-   You finally make direct contact with the space penguins.
-   Their delegates meet yours. All of you have brushed your fur diligently and bring the tastiest bamboo leaves as a gift of friendship.
-   When you board the penguins' ship, the meeting is a bit frosty.
-   First, they iced the floor and your diplomats slip and roll around a couple of times.
-   Next, upon seeing your gift the penguins hand you a slimy, smelly object.
+   You finally make direct contact with the mysterious penguins.
+   Their delegates meet yours. They are standing neatly in a row in front of you.
+   Boreaboy blurts out:
 
-   **You can't think of anything more rude! Is this a provocation? Is peace in the galaxy at stake?**
+   *"There is one for each of us – come on, let's eat them!"*
+   
+   Aarla rolls here eyes. 
 
-   Then the head of the penguin delegation starts to speak:
+   *"You know very well that we are not eating civilized beings. And I don't want feathers everywhere. Let's make contact."*
+
+   The meeting turns out a bit frosty. One penguin in the middle steps forward and places a tiny fish in front of the polar delegation.
+   Is that all they have to offer? Then they start chattering in a strange high-pitched language:
 
    .. code::
 
@@ -32,8 +35,16 @@ Diplomacy
       poksYHCokwxprrr pokYLOzUFprrr pokTLOuprrr pukOBuhRdprrr
       puksvWuiZMYmpIQNfgyprrr purPxOuoYLEprrr puksYtlOHPWprrr
    
-   Your translation computer quickly starts analyzing the penguin language.
-   Let's find out what the penguins have to say.
+   The polar bears hold their ears in pain.
+   Finally, the captain speaks:
+
+   *"Er.. folks, did anyone understand anything? Was that even a language."*
+
+   Seconds of silence. Boreaboy is licking his lips. Finally Ming Ming whispers from the back:
+
+   *"I took a course in pingu-speak at the university. Should I translate?"*
+
+   **Let's find out what the penguins have to say.**
 
 ----
 
@@ -74,7 +85,7 @@ Slicing Strings
 ---------------
 
 Your translation computer found out that every word starts with a **glacial phoneme**.
-These are any of the syllables *"plo", "pok", "pur", "prt"* or *"puk"* describing the current temperature. Because your life support keeps temperature constant, you can ignore these.
+These are any of the syllables *"plo", "pok", "pur", "prt"* or *"puk"* describing the current temperature. Because your fur keeps you warm, you can ignore these.
 
 Let's remove the first three characters.
 You can use ``.str.slice()`` to slice the strings in the entire column:
@@ -83,14 +94,14 @@ You can use ``.str.slice()`` to slice the strings in the entire column:
 
    df.select(pl.col("words").str.slice(3))
 
-Every word ends with the syllable *"prrr"*, an **arctic morpheme** which means something like *"it's cold here"*. This is obvious and can be ignored as well.
+Every word ends with the syllable *"prrr"*, an **arctic morpheme** which means something like *"it's cold here"*. You obviously disagree, but for diplomatic protocol you will ignore these as well.
 
-Every second character is a *prosodial psychronic phoneme* which is quite important in a conversation with other penguins, but in interstellar diplomacy we can leave it out as well.
+Every second character is a *prosodial psychronic phoneme* which is quite important in a conversation with other penguins, but in inter-species diplomacy you can leave it out as well.
 
 Insert numbers for *start, stop* and *step* into the slicing expression
 to get rid of all the morphemes and phonemes.
 
-The map_elements approach with a lambda is the standard way to replicate complex string slicing in Polars expressions.
+The map_elements approach with a lambda is the standard way to replicate complex string slicing in polars expressions.
 
 .. code:: python
 
@@ -115,7 +126,7 @@ The methods ``.str.to_uppercase()`` and ``.str.to_lowercase()`` allow to change 
    
    df.select(pl.col("words").str.to_lowercase())
 
-Because of our dense fur, the cold doesn't affect us much.
+Because of your dense fur, the cold doesn't affect you much.
 Convert to everything to lower case.
 
 ----
@@ -123,7 +134,7 @@ Convert to everything to lower case.
 Join Words
 ----------
 
-Once the computer is done translating all the words, you might want to put them into a single piece of text again.
+Once Ming Ming is done translating all the words, you might want to put them into a single piece of text again.
 In Polars, you can use the ``.str.join()`` method to join all strings in a column with a delimiter:
 
 .. code:: python
@@ -156,45 +167,14 @@ You can use the ``.str.extract_all()`` function to find all matches with a regex
 
 ----
 
-Translate Back
---------------
+.. card::
+   :shadow: lg
 
-It is time to respond the penguin delegation.
-Your translation computer has developed an algorithm that translates panda language back to penguin language:
+   **Translate Back**
 
-.. code:: python
-
-   import polars as pl
-   import string
-   from random import choice
+   It is time to respond to the penguin delegation.
+   Andromé and Ming Ming have developed an algorithm that translates the polar language back to penguin language:
    
-   def random_char_gen():
-       while True:
-           yield choice(string.ascii_lowercase + string.ascii_uppercase)
-               
-   def translate_pan_to_peng(word):
-       chars = ""
-       for a, b in zip(word, random_char_gen()):
-           chars += choice([a.lower, a.upper])()
-           chars += b
-       prefix = choice(["plo", "pok", "pur", "prt", "puk"])
-       postfix = 'prrr'
-       return prefix + chars + postfix
-
-   message = "..."
-   words = [translate_pan_to_peng(w) for w in message.split()]
-
-   df = pl.DataFrame({"text": [message]})
-
-   result = (
-      df
-      .select(pl.col("text").str.split(" ").alias("words"))
-      .explode("words")
-      .with_columns(
-         pl.col("words").map_elements(translate_pan_to_peng).alias("translated")
-      )
-   )
-
-   print(result)
-
-**Write an appropriate response and translate it to pingu-speak.**
+   .. literalinclude:: translate_back.py
+   
+   **Write an appropriate response and translate it to pingu-speak.**
