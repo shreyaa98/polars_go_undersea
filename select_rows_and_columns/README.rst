@@ -146,18 +146,18 @@ Select random rows
 Selecting and filtering examples
 --------------------------------
 
-===================================================== ========================================================
-command                                               description
-===================================================== ========================================================
-df.row(0)                                             select the first row as a tuple of values
-df.slice(10)                                          select all rows, skipping the first 10
-df.slice(5, 10)                                       select 10 rows starting from row 6
-df.select(pl.exclude('id'))                           select all columns except 'id'
-df.select(pl.all())                                   select all columns explicitly
-df.select(pl.col(pl.Int64))                           select columns by data type
-df.filter(pl.col('ears') == 'pink')                   find rows where 'ears' is exactly 'pink'
-df.filter(~pl.col('ears').is_in(['pink', 'black']))   find rows where 'ears' is neither 'pink' nor 'black'
-===================================================== ========================================================
+========================================================= ========================================================
+command                                                   description
+========================================================= ========================================================
+``df.row(0)``                                             select the first row as a tuple of values
+``df.slice(10)``                                          select all rows, skipping the first 10
+``df.slice(5, 10)``                                       select 10 rows starting from row 6
+``df.select(pl.exclude('id'))``                           select all columns except 'id'
+``df.select(pl.all())``                                   select all columns explicitly
+``df.select(pl.col(pl.Int64))``                           select columns by data type
+``df.filter(pl.col('ears') == 'pink')``                   find rows where 'ears' is exactly 'pink'
+``df.filter(~pl.col('ears').is_in(['pink', 'black']))``   find rows where 'ears' is neither 'pink' nor 'black'
+========================================================= ========================================================
 
 Challenge
 ---------

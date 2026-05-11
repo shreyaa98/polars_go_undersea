@@ -132,21 +132,21 @@ If you are not interested in the count, check the unique values:
 Attributes and methods of DataFrames
 ------------------------------------
 
-======================== ==================================
-command                  description  
-======================== ==================================
-`df.shape`               number of rows and columns
-`df.height`              number of rows
-`df.width`               number of columns
-`df.schema`              shows data types
-`df.head(n)`             shows first n lines
-`df.tail(n)`             shows last n lines
-`df.glimpse()`           quick summary
-`df[col].value_counts()` counts unique values in a column
-`df[col].unique()`       shows unique values in a colunmn
-`df.estimated_size()`    returns size in bytes
-`df.n_chunks()`          returns number of memory chunks
-======================== ==================================
+========================== ==================================
+command                    description  
+========================== ==================================
+``df.shape``               number of rows and columns
+``df.height``              number of rows
+``df.width``               number of columns
+``df.schema``              shows data types
+``df.head(n)``             shows first n lines
+``df.tail(n)``             shows last n lines
+``df.glimpse()``           quick summary
+``df[col].value_counts()`` counts unique values in a column
+``df[col].unique()``       shows unique values in a colunmn
+``df.estimated_size()``    returns size in bytes
+``df.n_chunks()``          returns number of memory chunks
+========================== ==================================
 
 
 Challenge
