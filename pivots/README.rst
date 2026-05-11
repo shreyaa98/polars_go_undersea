@@ -2,28 +2,40 @@
 Pivot Tables
 ============
 
-Penguin Tribes
---------------
-
 .. card::
    :shadow: lg
 
-   Your scientists come with exciting news: they have discovered that **the penguins are also black and white**! Maybe both people have emerged from the same space-traveling ancestor?
+   **Penguin Tribes**
 
-   There seem to be three big tribes of penguins with remarkably distinct heads:
+   The crew sits at the lunch table. Ilmar starts a conversation:
+   
+   *"Hey boss, I noticed something: those pingus, they are pretty much like us. They swim, they like cool water, they eat fish. They even have the same colors as Ming here. Just sayin'."*
+   
+   *"Yeah but with a different pattern, "* Boreaboy chips in, *"most of their fur looks like us, but they have these funny paws."*.
 
+   Andromé joins the discussion: *"I think they have different patterns, maybe they are tattooed. Look, I made a drawing."*
+ 
    .. figure:: penguin_heads.png
 
    *Palmerpenguins Artwork by @allison_horst*
 
-   You need to find more about them!
+   Finally, Aarla concludes: *"Tattoo or not, we should find out more about them. Our folks at home will want to know. How far are we with the measurements?"*
 
-   .. code:: python3
-     
-      import seaborn as sns
-      import polars as pl
+   **Summarize the penguin data, considering the three different species.**
 
-      df = pl.from_pandas(sns.load_dataset("penguins"))
+Load the data
+-------------
+
+Start by loading the penguin data:
+
+.. code:: python3
+   
+   import seaborn as sns
+   import polars as pl
+
+   df = pl.from_pandas(sns.load_dataset("penguins"))
+   df = df.drop_nulls()
+
 
 Pivot Tables
 ------------
@@ -32,6 +44,7 @@ A **pivot table** is a generic summary of tabular data that is well-known from s
 It creates a table where the rows and colums are defined by categorical columns of the data.
 
 To create a simple pivot of your data, you need to have at least **one categorical and one numerical column and a function that aggregates data**:
+
 ::
 
    categories + numbers + aggregation function -> pivot
@@ -40,10 +53,9 @@ Let's examine one example:
 
 .. code:: python3
 
-   df_pivot = df_pl.pivot(
+   df.pivot(
       values="bill_length_mm",       
-      index="island",               
-      columns="species",            
+      on="species",            
       aggregate_function="mean"      
    )
       
@@ -52,6 +64,7 @@ Here, each distinct value in ``index`` results in a separate row. The ``values``
 
 Pivot Tables with rows and columns
 ----------------------------------
+
 Many times, you will use two categorical columns so that the pivot table has multiple columns.
 In that case, one categorical column defines the rows, the other defines the columns of the pivot table:
 
@@ -63,14 +76,14 @@ The code requires one more line:
 
 .. code:: python3
 
-   df_pivot = df_pl.pivot(
+   df.pivot(
       values="bill_length_mm",
       index="island",
-      columns="sex",
-      aggregate_function="count"
+      on="sex",
+      aggregate_function="len"
    )
 
-The ``column`` parameter lets each distinct gender result in a separate column.
+The ``on`` parameter lets each distinct gender result in a separate column.
 Counting works with any column as ``values``, but ``None`` is ignored.
 
 Aggregation Functions
@@ -78,7 +91,7 @@ Aggregation Functions
 
 There are just a few aggregation functions that cover most statistical functions:
 
-- count
+- len
 - sum
 - mean
 - std (the standard deviation)
@@ -96,11 +109,11 @@ Assume we have the pivot:
 
 .. code:: python3
 
-   piv = df_pl.pivot(
+   piv = df.pivot(
       values="bill_length_mm",
       index="island",
-      columns="sex",
-      aggregate_function="count"
+      on="sex",
+      aggregate_function="len"
    )
 
 You can normalize over the rows, so that the relative frequencies sum up to 1.0 for each island:
@@ -125,7 +138,11 @@ Finally, to normalize the entire table, so that everything adds up to 1.0, you n
 
 .. code:: python3
 
+   # select columns to sum up explicitly
    total = piv.select(pl.sum_horizontal(pl.col("Male"), pl.col("Female"))).sum().item()
+
+   # alternative: select numerical column s
+   total = piv.select(pl.col(pl.UInt32)).sum().sum_horizontal().item()
 
    piv.with_columns(
        pl.col("Male") / total,
@@ -153,7 +170,7 @@ Challenge
 .. card::
    :shadow: lg
 
-   Examine the penguin scan data further:
+   Examine the penguin data further:
 
    .. code:: python3
 
