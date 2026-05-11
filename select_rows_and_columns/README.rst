@@ -33,7 +33,7 @@ This is also useful to check what types the names are.
 Select a column
 ---------------
 
-A single column is returned as a `pd.Series`:
+A single column is returned as a `pl.Series`:
 
 .. code:: python
 
@@ -53,35 +53,56 @@ The inner one is a list of column names:
 
 ----
 
-Select columns by position
---------------------------
-
-The slice() method selects rows by position.
-slice(10, 10) returns 10 rows starting from row 10.
-The column slice df.columns[1:4] selects columns 2–4, which are then returned using select().
-
-.. code:: python
-
-   df.slice(10,10).select(df.columns[1:4])
-
-----
-
 Select rows by position
 -----------------------
 
-You can select rows by position using the slice() method.
+The ``slice()`` method selects rows by position.
 The first argument specifies the starting row, and the second argument specifies the number of rows to return.
 
 .. code:: python
 
-   df.slice(10, 10)
+   df.slice(5, 10)
 
 ----
 
-Select rows by column value (Polars equivalent of index selection)
--------------------------------------------------------------------
+Select columns by position
+--------------------------
 
-In Polars, DataFrames don't have indices like Pandas. Instead, filter rows based on column values directly.
+The column slice ``df.columns[1:4]`` selects columns 2–4, which are then returned using ``select()``.
+
+.. code:: python
+
+   df.select(df.columns[1:4])
+
+----
+
+Select rows and columns by position
+-----------------------------------
+
+Combine both row and column selection:
+
+.. code:: python
+
+   df.slice(5, 10).select(df.columns[1:4])
+
+A pythonic index notation is also available. The first pair in the square brackets selects rows 2-5, the second pair selects columns 3 to 4.
+Note that indices in Python always start at zero, and the last position is never included.
+
+.. code:: python
+
+   df[5:15, 1:4]
+
+.. note::
+
+   In this tutorial, we are giving preference to the *functional notation* using
+   functions like ``slice`` because it integrates more easily with other tools.
+
+----
+
+Select rows by column value
+---------------------------
+
+To select rows based on column values, use the ``filter()`` method.
 This is useful for selecting rows where a column matches a specific value, e.g.
 
 .. code:: python
@@ -122,7 +143,21 @@ Select random rows
 
 ----
 
-.. figure:: selection.png
+Selecting and filtering examples
+--------------------------------
+
+===================================================== ========================================================
+command                                               description
+===================================================== ========================================================
+df.row(0)                                             select the first row as a tuple of values
+df.slice(10)                                          select all rows, skipping the first 10
+df.slice(5, 10)                                       select 10 rows starting from row 6
+df.select(pl.exclude('id'))                           select all columns except 'id'
+df.select(pl.all())                                   select all columns explicitly
+df.select(pl.col(pl.Int64))                           select columns by data type
+df.filter(pl.col('ears') == 'pink')                   find rows where 'ears' is exactly 'pink'
+df.filter(~pl.col('ears').is_in(['pink', 'black']))   find rows where 'ears' is neither 'pink' nor 'black'
+===================================================== ========================================================
 
 Challenge
 ---------
