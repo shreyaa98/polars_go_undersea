@@ -2,11 +2,11 @@
 Links
 =====
 
-pandas
+polars
 ------
 
-- `Pandas Documentation <https://pandas.pydata.org/>`__
-- `Pandas Exercises <https://github.com/guipsamora/pandas_exercises>`__ – by @guipsamora
+- `Polars Documentation <https://pola.rs/>`__
+- `Narwhals - DataFrame compatibility layer <https://narwhals-dev.github.io/narwhals/>`__
 
 Visualization
 -------------
@@ -24,4 +24,9 @@ Eye Candy
 ---------
 
 - `Information is Beautiful <https://www.informationisbeautifulawards.com/showcase?award=2022&type=awards>`__
-- `Digital Nomad Dashboard <https://nomadlist.com/digital-nomad-statistics>`__
+
+Community
+---------
+
+- `PyData Berlin <https://berlin.pydata.org/>´__
+- `PyLadies Berlin <https://berlin.pyladies.com/en/>`__
