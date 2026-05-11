@@ -3,8 +3,7 @@ Create DataFrames
 
 .. _create-dataframes-and-series-1:
 
-Matter Transformation
----------------------
+.. figure:: sushi.png
 
 .. card::
    :shadow: lg
@@ -23,9 +22,7 @@ Matter Transformation
 
    **Let's see how it works.**
 
-----
-
-**In this chapter, you learn to convert Python data structures like lists and dictionaries into pandas types like Series and DataFrames**.
+**In this chapter, you will convert Python data structures like lists and dictionaries into pandas types like Series and DataFrames**.
 
 
 Series from a Python List
