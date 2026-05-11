@@ -39,20 +39,56 @@ to sort by more than one column, try:
    df = df.sort(["category", "type"], descending=[False, True])
 
 
+Rename a column
+---------------
+
+There are all kinds of reasons for renaming columns. 
+The ``alias()`` expression adds a new column with the same data.
+
+.. code:: python
+
+   df.with_columns(pl.col("crate_no").alias('crate_number'))
+
+
+Drop a column
+-------------
+
+The ``drop()`` method removes one or more columns:
+
+.. code:: python
+
+   df.drop(pl.col("column_2"))
+
+   df.drop(pl.col("column_2", "column_3"))
+
 Change the data type
 --------------------
 
-Convert values to strings:
+Converting values to integers is a very frequent operation:
+
+Convert values to strings, replacing the old column:
+
+.. code:: python
+
+   df.with_columns(pl.col("crate_str").cast(pl.Int64))
 
 .. code:: python
 
    df = df.with_columns(pl.col("crate_no").cast(pl.Utf8).alias("crate_str"))
 
-You can easily combine multiple columns using standard operators:
+Instead of replacing, you might want to create a new one:
 
 .. code:: python
 
-   df = df.with_columns((pl.col("crate_no").cast(pl.Utf8) + pl.col("crate_shelf")).alias("crate_id"))
+   df = df.with_columns(pl.col("crate_no").cast(pl.Utf8).alias("crate_str"))
+
+You can easily combine multiple columns using string concatenation:
+
+.. code:: python
+
+   df = df.with_columns((
+      pl.col("crate_no").cast(pl.Utf8) + pl.col("crate_shelf")
+      ).alias("crate_id"))
 
 Create new rows
 ---------------

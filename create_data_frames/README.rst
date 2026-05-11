@@ -1,12 +1,10 @@
-Create DataFrames and Series
-============================
+Create DataFrames
+=================
 
 .. _create-dataframes-and-series-1:
 
 Matter Transformation
 ---------------------
-
-.. figure:: matter_transformer.jpeg
 
 .. card::
    :shadow: lg

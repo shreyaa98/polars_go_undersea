@@ -42,16 +42,18 @@ Contents
    string_handling/README.rst
    edit_columns/README.rst
    time_series/README.rst
-   plotting_maps/README.rst
    create_data_frames/README.rst
-   long_vs_wide/README.rst
-   aggregation/README.rst
-   database/README.rst
    dashboard/README.rst
    links.rst
 
 .. 
    chapters to be added later
+
+   long_vs_wide/README.rst
+   plotting_maps/README.rst
+   database/README.rst
+   aggregation/README.rst
+   alson write something about narwhals - good for the sea theme
 
    these three would fit perfectly into the arctic theme
 
