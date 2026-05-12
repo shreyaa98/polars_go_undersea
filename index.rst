@@ -41,7 +41,6 @@ Contents
    pivots/README.rst
    string_handling/README.rst
    edit_columns/README.rst
-   time_series/README.rst
    create_data_frames/README.rst
    narwhal/README.rst
    dashboard/README.rst
@@ -50,6 +49,7 @@ Contents
 .. 
    chapters to be added later
 
+   time_series/README.rst
    long_vs_wide/README.rst
    plotting_maps/README.rst
    database/README.rst
