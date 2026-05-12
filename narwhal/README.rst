@@ -13,9 +13,9 @@ Narwhals
    *"Captain, I think we are being followed."*
 
    Aarla and Lumi are looking through the bullseye at the silhoutte gently gliding through the waters behind them.
-   Ming Ming is there as well, cleaning.
+   Ming Ming is hanging out on the bridge as well.
 
-   *"That creature has been there for a while. What is it even, a unicorn? Set course towards it, let's see how it react."*
+   *"That creature has been there for a while. What is it even, a unicorn? Set course towards it, let's see how it reacts."*
 
    As the heavy submarine turns around, the bears hear a voice in their heads:
 
