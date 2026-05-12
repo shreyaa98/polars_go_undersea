@@ -66,17 +66,17 @@ Change the data type
 
 Converting values to integers is a very frequent operation:
 
-Convert values to strings, replacing the old column:
-
 .. code:: python
 
    df.with_columns(pl.col("crate_str").cast(pl.Int64))
+
+Convert values to strings, replacing the old column:
 
 .. code:: python
 
    df = df.with_columns(pl.col("crate_no").cast(pl.Utf8).alias("crate_str"))
 
-Instead of replacing, you might want to create a new one:
+Instead of replacing, you might want to create a new column:
 
 .. code:: python
 
@@ -116,8 +116,6 @@ values is:
    plt.bar(nulls.columns, nulls.row(0))
    plt.xticks(rotation=45, ha="right")
    plt.tight_layout()
-   plt.show()
-
 
 Often, you might simply want to kick out all rows in which a None or NaN
 occurs:
