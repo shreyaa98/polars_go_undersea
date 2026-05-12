@@ -54,7 +54,6 @@ Contents
    plotting_maps/README.rst
    database/README.rst
    aggregation/README.rst
-   alson write something about narwhals - good for the sea theme
 
    these three would fit perfectly into the arctic theme
 

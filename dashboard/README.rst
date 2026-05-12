@@ -2,6 +2,7 @@
 Dashboard
 =========
 
+.. figure:: ursa_maior.png
 
 .. card::
    :shadow: lg
