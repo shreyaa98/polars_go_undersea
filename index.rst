@@ -43,7 +43,7 @@ Contents
    edit_columns/README.rst
    time_series/README.rst
    create_data_frames/README.rst
-   narwhals/README.rst
+   narwhal/README.rst
    dashboard/README.rst
    links.rst
 
