@@ -167,9 +167,9 @@ Challenge
 
    Take care of the following clean-ups in the cargo docs :download:`cargo.csv`:
 
-   - for the radioactive waste, replace the words in the `units` column by numbers
+   - for the screws, replace the words in the `units` column by numbers
    - convert the `units` column to the type `int`
-   - fill the missing values in the `category` column for the bamboo ice cream
+   - fill the missing values in the `category` column for the ice cream
    - fill the missing values in the `units` column
    - sort the crates by type and by identifier in ascending order
   
