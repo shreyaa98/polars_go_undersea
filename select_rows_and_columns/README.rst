@@ -9,12 +9,12 @@ Select Rows and Columns
    **Find your Crew**
 
    "Time to leave", Captain Aarla thought. "Wait, the ship is completely empty. 
-   Wheere is everybody? Grm! of course they are hanging out at the bar."
+   Where is everybody? Grm! of course they are hanging out at the bar."
    Aarla slammed the bar door open. The bar was full of people. Aarla yelled: "WHERE IS MY CREW?". 
    The room fell silent immediately. A few bears ducked behind a corner or jumped below a table. 
    But for sure her crew was here. She went around looking.
 
-   To recognize your crew members again, you’ll need to load the crew roster :download:`crew.csv` using Polars and inspect the data.
+   To recognize your crew members again, you’ll need to load the bar registry :download:`bar.csv` using Polars and inspect the data.
 
 ----
 
@@ -165,25 +165,21 @@ Challenge
 .. card::
    :shadow: lg
 
-   Select rows from the crew roster :download:`crew.csv` to find your five officers.
+   Select rows from the bar registry :download:`bar.csv` to find your five crew members.
    You have a couple of hints:
    
-   * all of your officers have **at least 12 blue spots**
-   * three of your officers have **exactly 9 black spots**
-   * none of your officers has **pink ears** or **black ears**
-   * **Lumi** (helmsman) easily recognizable by her red headscarf, has the **id 247**
-   * **Ilmar** (ships carpenter) with at least 100 tattoos. **Has more than 18 blue spots and also have ears dyed in indigo**
-   * **Andromé** (navigator) with a green headscarf. Has more blue spots than the Boreaboy.
-   * **Boreaboy** (cook) with something between seven and ten earrings. Has an **unknown ear color**.
-   * and of course **Ming Ming** (intern ) from the remote planet of Pandalor, with no tattoos, earrings or scarf
-   **Has their ears dyed in chartreuse. They have fewer blue spots than the Andromé.**
+   * **Lumi** (the helmsman) is easily recognizable by his red headscarf.
+   * **Ilmar** (the ships carpenter) has at exactly 24 tattoos and a headscarf that is blue or indigo.
+   * **Andromé** (navigator) has a green headscarf and more earrings than Boreaboy.
+   * **Boreaboy** (cook) has exactly between 8 and 11 earrings and less than 5 tattoos. He has no headscarf.
+   * **Ming Ming**, the intern from the remote planet of Pandalor has no tattoos, earrings or scarf
 
-   **Identify all five of them.**
+   **Identify all five of them by their id.**
 
-.. dropdown:: How many blue spots do your officers have in total?
+.. dropdown:: What is the sum of your crew members id values?
    :animate: fade-in
 
-   There should be exactly 79.
+   It should be exactly 321.
 
 ----
 
