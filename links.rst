@@ -28,5 +28,5 @@ Eye Candy
 Community
 ---------
 
-- `PyData Berlin <https://berlin.pydata.org/>´__
+- `PyData Berlin <https://berlin.pydata.org/>`__
 - `PyLadies Berlin <https://berlin.pyladies.com/en/>`__
