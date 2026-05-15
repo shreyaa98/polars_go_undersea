@@ -160,7 +160,7 @@ Challenge
    - display the number of rows and columns
    - display the last 5 rows
    - list the column names
-   - how many life forms are there on the bridge?
    - how many stations does the ship have?
    - how many different security levels are there?
-   - there is one life support value that is neither 0 or 100%. How much is it? 
+   - which of the stations is under construction?
+   - where did Ming Ming, the intern, go?
